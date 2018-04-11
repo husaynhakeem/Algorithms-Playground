@@ -3,7 +3,7 @@ package chapter1_exercise9.java;
 /**
  * Created by husaynhakeem on 12/29/17.
  */
-public class SolutionJava {
+public class Solution_1 {
 
     public static void main(String[] args) {
         System.out.println(isRotation("waterbottle", "erbottlewat"));

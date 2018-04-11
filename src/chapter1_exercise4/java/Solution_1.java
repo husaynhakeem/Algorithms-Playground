@@ -6,13 +6,14 @@ import java.util.Map;
 /**
  * Created by husaynhakeem on 4/10/18.
  */
-public class Solution {
+public class Solution_1 {
 
     public static void main(String[] args) {
 
         System.out.println(isPermutationOfPalindrome("Tact Coa"));
         System.out.println(isPermutationOfPalindrome("Taco cat"));
         System.out.println(isPermutationOfPalindrome("Atco cta"));
+        System.out.println(isPermutationOfPalindrome("Atco ctt"));
 
     }
 
