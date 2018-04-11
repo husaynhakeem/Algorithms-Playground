@@ -1,4 +1,4 @@
-package chapter1_exercise9;
+package chapter1_exercise9.java;
 
 /**
  * Created by husaynhakeem on 12/29/17.
