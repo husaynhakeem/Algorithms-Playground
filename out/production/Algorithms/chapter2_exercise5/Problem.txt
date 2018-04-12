@@ -1,0 +1,7 @@
+Delete middle node
+
+You have 2 numbers represented by a linked list, where each node contains a single digit.
+
+Example:
+Input: The node c from the linked list a -> b -> c -> d -> e -> f
+Result: Nothing is returned, but the new inked list looks like a -> b -> d -> e -> f
