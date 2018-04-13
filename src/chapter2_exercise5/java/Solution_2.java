@@ -5,9 +5,6 @@ import Utilities.java.LinkedListUtils.*;
 
 import static Utilities.java.LinkedListUtils.createLinkedListFrom;
 
-/**
- * Created by husaynhakeem on 4/12/18.
- */
 public class Solution_2 {
 
     public static void main(String[] args) {

@@ -3,9 +3,6 @@ package chapter1_exercise4.java;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by husaynhakeem on 4/10/18.
- */
 public class Solution_1 {
 
     public static void main(String[] args) {

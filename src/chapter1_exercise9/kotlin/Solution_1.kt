@@ -1,8 +1,5 @@
 package chapter1_exercise9.kotlin
 
-/**
- * Created by husaynhakeem on 12/29/17.
- */
 
 fun main(args: Array<String>) {
     println(chapter1_exercise9.kotlin.isRotation("waterbottle", "erbottlewat"))

@@ -2,9 +2,6 @@ package chapter2_exercise3.java;
 
 import Utilities.java.LinkedListUtils;
 
-/**
- * Created by husaynhakeem on 4/12/18.
- */
 public class Solution_1 {
 
     public static void main(String[] args) {

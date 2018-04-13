@@ -3,9 +3,6 @@ package chapter2_exercise5.java;
 import Utilities.java.LinkedListUtils;
 import Utilities.java.LinkedListUtils.Node;
 
-/**
- * Created by husaynhakeem on 4/12/18.
- */
 public class Solution_1 {
 
     public static void main(String[] args) {
