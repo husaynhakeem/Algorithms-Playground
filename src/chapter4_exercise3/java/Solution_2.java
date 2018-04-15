@@ -1,10 +1,13 @@
 package chapter4_exercise3.java;
 
+import Utilities.java.GraphUtils;
 import Utilities.java.GraphUtils.TreeNode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
-public class Solution_1 {
+public class Solution_2 {
 
     public static void main(String[] args) {
         TreeNode one = new TreeNode(1);
@@ -40,22 +43,26 @@ public class Solution_1 {
 
     private static List<LinkedList<TreeNode>> getListOfTreeNodes(TreeNode root) {
         List<LinkedList<TreeNode>> list = new ArrayList<>();
-        populateTreeNodesListForDepth(list, 0, root);
+
+        LinkedList<TreeNode> current = new LinkedList<>();
+        if (root != null)
+            current.add(root);
+
+        while (!current.isEmpty()) {
+            list.add(current);
+
+            LinkedList<TreeNode> parents = current;
+            current = new LinkedList<>();
+
+            for (TreeNode parent : parents) {
+                if (parent.left != null)
+                    current.add(parent.left);
+
+                if (parent.right != null)
+                    current.add(parent.right);
+            }
+        }
+
         return list;
-    }
-
-    private static void populateTreeNodesListForDepth(List<LinkedList<TreeNode>> list, int depth, TreeNode node) {
-        if (node == null)
-            return;
-
-        if (list.size() == depth)
-            list.add(depth, new LinkedList<>());
-
-        populateTreeNodesListForDepth(list, depth + 1, node.left);
-
-        LinkedList<TreeNode> depthNodesList = list.get(depth);
-        depthNodesList.addLast(node);
-
-        populateTreeNodesListForDepth(list, depth + 1, node.right);
     }
 }
