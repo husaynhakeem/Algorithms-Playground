@@ -1,4 +1,4 @@
-package chapter4_exercise1;
+package chapter4_exercise1.java;
 
 import Utilities.java.GraphUtils.GraphNode;
 
