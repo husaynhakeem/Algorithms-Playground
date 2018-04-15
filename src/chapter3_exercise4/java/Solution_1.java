@@ -1,5 +1,6 @@
 package chapter3_exercise4.java;
 
+import java.util.LinkedList;
 import java.util.Stack;
 
 public class Solution_1 {
