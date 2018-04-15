@@ -12,21 +12,38 @@ public class GraphUtils {
         public GraphNode[] adjacents = new GraphNode[]{};
     }
 
-    public static class TreeNode {
+    public static class BaseTreeNode {
         public int data;
-        public TreeNode left;
-        public TreeNode right;
 
-        public TreeNode() {
+        public BaseTreeNode() {
         }
 
-        public TreeNode(int data) {
+        public BaseTreeNode(int data) {
             this.data = data;
         }
 
         @Override
         public String toString() {
             return "" + data;
+        }
+    }
+
+    public static class TreeNode extends BaseTreeNode {
+        public TreeNode left;
+        public TreeNode right;
+
+        public TreeNode(int data) {
+            super(data);
+        }
+    }
+
+    public static class TreeNodeWithLinkToParent extends BaseTreeNode {
+        public TreeNodeWithLinkToParent left;
+        public TreeNodeWithLinkToParent right;
+        public TreeNodeWithLinkToParent parent;
+
+        public TreeNodeWithLinkToParent(int data) {
+            super(data);
         }
     }
 
