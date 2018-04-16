@@ -15,7 +15,10 @@ public class BubbleSort {
     }
 
     private static void bubbleSort(int[] array) {
-        boolean swapped = false;
+        if (array == null)
+            return;
+
+        boolean swapped;
 
         do {
             swapped = false;
