@@ -7,7 +7,7 @@ public class BinarySearch_Recursive {
         System.out.println(binarySearch(first, 20));
 
         int[] second = new int[]{1, 2, 3, 4, 7, 9, 10, 20, 168};
-        System.out.println(binarySearch(first, 5));
+        System.out.println(binarySearch(second, 5));
     }
 
     private static int binarySearch(int[] array, int x) {
