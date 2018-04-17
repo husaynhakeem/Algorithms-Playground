@@ -1,0 +1,7 @@
+Sparse search
+
+Given a sorted array of Strings that is interspersed with empty strings, write a method to find the location of a given string.
+
+Example:
+Input: ball, {"at", "", "", "", "ball", "", "", "car", "", "", "dad", "", ""}
+Output: 4
