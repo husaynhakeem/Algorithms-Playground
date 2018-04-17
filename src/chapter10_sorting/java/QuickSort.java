@@ -1,17 +1,17 @@
 package chapter10_sorting.java;
 
-import static Utilities.java.ArrayUtils.printArray;
+import static Utilities.java.ArrayUtils.printArrayOfInts;
 
 public class QuickSort {
 
     public static void main(String[] args) {
         int[] first = new int[]{10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
         quickSort(first);
-        printArray(first);
+        printArrayOfInts(first);
 
         int[] second = new int[]{5, 4, 6, 9, 1, 3, 2, 7, 0, 10, 8};
         quickSort(second);
-        printArray(second);
+        printArrayOfInts(second);
     }
 
     private static void quickSort(int[] array) {

@@ -1,6 +1,6 @@
 package chapter10_exercise1.java;
 
-import static Utilities.java.ArrayUtils.printArray;
+import static Utilities.java.ArrayUtils.printArrayOfInts;
 
 public class Solution_1 {
 
@@ -9,13 +9,13 @@ public class Solution_1 {
         int[] b = new int[]{2, 3, 4};
 
         sortedMerge(a, b, 3);
-        printArray(a);
+        printArrayOfInts(a);
 
         int[] c = new int[]{26, 28, 78, 200, 245, -1, -1, -1, -1, -1, -1, -1, -1, -1};
         int[] d = new int[]{2, 3, 4, 27, 29, 31};
 
         sortedMerge(c, d, 4);
-        printArray(c);
+        printArrayOfInts(c);
     }
 
     private static void sortedMerge(int[] a, int[] b, int indexA) {

@@ -1,15 +1,15 @@
 package chapter10_sorting.java;
 
-import static Utilities.java.ArrayUtils.printArray;
+import static Utilities.java.ArrayUtils.printArrayOfInts;
 
 public class MergeSort {
 
     public static void main(String[] args) {
         int[] first = new int[]{10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
-        printArray(mergeSort(first));
+        printArrayOfInts(mergeSort(first));
 
         int[] second = new int[]{5, 4, 6, 9, 1, 3, 2, 7, 0, 10, 8};
-        printArray(mergeSort(second));
+        printArrayOfInts(mergeSort(second));
     }
 
     private static int[] mergeSort(int[] array) {
