@@ -2,20 +2,18 @@ package euler.problem_002.java;
 
 public class Solution_1 {
 
-    private static final int FIBONACCI_LIMIT = 4_000_000;
-
     public static void main(String[] args) {
-        System.out.println(sumOfEvenValuedFibonacciValues());
+        System.out.println(sumOfEvenValuedFibonacciValuesSmallerThan(4_000_000));
     }
 
-    private static int sumOfEvenValuedFibonacciValues() {
+    private static int sumOfEvenValuedFibonacciValuesSmallerThan(int n) {
         int first = 0;
         int second = 1;
         int third = first + second;
 
         int evenValuesSum = 0;
 
-        while (first + second < FIBONACCI_LIMIT) {
+        while (first + second < n) {
             if (isEven(first))
                 evenValuesSum += first;
             if (isEven(second))

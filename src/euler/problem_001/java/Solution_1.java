@@ -8,12 +8,10 @@ public class Solution_1 {
 
     private static int sumOfMultiplesOfThreeOrFiveSmallerThan(int high) {
         int sum = 0;
-        int n = 3;
 
-        while (sum + n <= high) {
-            if (isMultipleOfThreeOrFive(n))
-                sum += n;
-            n++;
+        for (int i = 0; i <= 1000; i++) {
+            if (isMultipleOfThreeOrFive(i))
+                sum += i;
         }
 
         return sum;
