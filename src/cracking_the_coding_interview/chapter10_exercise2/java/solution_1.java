@@ -1,15 +1,15 @@
 package cracking_the_coding_interview.chapter10_exercise2.java;
 
-import java.util.*;
+import Utilities.java.ArrayUtils;
 
-import static Utilities.java.ArrayUtils.printArray;
+import java.util.*;
 
 public class solution_1 {
 
     public static void main(String[] args) {
         String[] words = new String[]{"care", "school", "univinu", "madam", "race", "soolhc", "acre"};
         groupAnagrams(words);
-        printArray(words);
+        ArrayUtils.printArray(words);
     }
 
     private static void groupAnagrams(String[] array) {

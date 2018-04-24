@@ -2,7 +2,7 @@ package cracking_the_coding_interview.chapter1_exercise9.kotlin
 
 
 fun main(args: Array<String>) {
-    println(chapter1_exercise9.kotlin.isRotation("waterbottle", "erbottlewat"))
+    println(isRotation("waterbottle", "erbottlewat"))
 }
 
 private fun isRotation(first: String, second: String): Boolean {
