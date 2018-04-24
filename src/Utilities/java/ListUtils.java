@@ -18,4 +18,13 @@ public class ListUtils {
 
         System.out.println(sb.toString());
     }
+
+    public static int[] integerListToIntArray(List<Integer> list) {
+        int[] array = new int[list.size()];
+        int index = 0;
+        for (Integer i : list) {
+            array[index++] = i;
+        }
+        return array;
+    }
 }
