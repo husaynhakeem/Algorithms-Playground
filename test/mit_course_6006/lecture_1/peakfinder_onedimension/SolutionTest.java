@@ -1,4 +1,4 @@
-package mit_course_6006.lecture_1;
+package mit_course_6006.lecture_1.peakfinder_onedimension;
 
 import org.junit.Test;
 
@@ -44,7 +44,6 @@ public class SolutionTest {
 
         final List<Integer> peaks = new ArrayList<>();
         peaks.add(6);
-        assertEquals(1, peaks.size());
         assertTrue(peaks.contains(array[peakPosition]));
     }
 
@@ -56,7 +55,6 @@ public class SolutionTest {
 
         final List<Integer> peaks = new ArrayList<>();
         peaks.add(6);
-        assertEquals(1, peaks.size());
         assertTrue(peaks.contains(array[peakPosition]));
     }
 
@@ -66,9 +64,6 @@ public class SolutionTest {
 
         final int peakPosition = solution.findPeak(array);
 
-        final List<Integer> peaks = new ArrayList<>();
-        peaks.add(6);
-        assertEquals(1, peaks.size());
         assertEquals(0, peakPosition);
     }
 

@@ -1,8 +1,8 @@
-package mit_course_6006.lecture_1;
+package mit_course_6006.lecture_1.peakfinder_onedimension;
 
-class Solution {
+public class Solution {
 
-    int findPeak(int[] array) {
+    public int findPeak(int[] array) {
         if (array == null) {
             return -1;
         }
