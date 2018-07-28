@@ -8,14 +8,17 @@ import static org.junit.Assert.assertTrue;
 public class SolutionTest {
 
     private final Solution solution = new Solution();
+    private final Solution_2 otherSolution = new Solution_2();
 
     @Test
     public void repeatedSubstringPattern_1() throws Exception {
         final String input = "abab";
 
         final boolean result = solution.repeatedSubstringPattern(input);
+        final boolean otherResult = otherSolution.repeatedSubstringPattern(input);
 
         assertTrue(result);
+        assertTrue(otherResult);
     }
 
     @Test
@@ -23,8 +26,10 @@ public class SolutionTest {
         final String input = "aba";
 
         final boolean result = solution.repeatedSubstringPattern(input);
+        final boolean otherResult = otherSolution.repeatedSubstringPattern(input);
 
         assertFalse(result);
+        assertFalse(otherResult);
     }
 
     @Test
@@ -32,8 +37,10 @@ public class SolutionTest {
         final String input = "abcabcabcabc";
 
         final boolean result = solution.repeatedSubstringPattern(input);
+        final boolean otherResult = otherSolution.repeatedSubstringPattern(input);
 
         assertTrue(result);
+        assertTrue(otherResult);
     }
 
     @Test
@@ -41,8 +48,10 @@ public class SolutionTest {
         final String input = "a";
 
         final boolean result = solution.repeatedSubstringPattern(input);
+        final boolean otherResult = otherSolution.repeatedSubstringPattern(input);
 
         assertFalse(result);
+        assertFalse(otherResult);
     }
 
     @Test
@@ -50,8 +59,10 @@ public class SolutionTest {
         final String input = "";
 
         final boolean result = solution.repeatedSubstringPattern(input);
+        final boolean otherResult = otherSolution.repeatedSubstringPattern(input);
 
         assertFalse(result);
+        assertFalse(otherResult);
     }
 
     @Test
@@ -59,7 +70,9 @@ public class SolutionTest {
         final String input = null;
 
         final boolean result = solution.repeatedSubstringPattern(input);
+        final boolean otherResult = otherSolution.repeatedSubstringPattern(input);
 
         assertFalse(result);
+        assertFalse(otherResult);
     }
 }
