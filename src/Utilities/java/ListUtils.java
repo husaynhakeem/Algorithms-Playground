@@ -1,5 +1,7 @@
 package Utilities.java;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ListUtils {
@@ -26,5 +28,11 @@ public class ListUtils {
             array[index++] = i;
         }
         return array;
+    }
+
+    public static <T> List<T> createList(T... objects) {
+        final List<T> list = new ArrayList<>();
+        list.addAll(Arrays.asList(objects));
+        return list;
     }
 }

@@ -1,0 +1,7 @@
+Document distance
+
+The document distance problem has applications in finding similar documents, detecting duplicates (Wikipedia mirrors and Google) and plagiarism, and also in web search (D2 = query).
+
+Some Definitions:
+• Word = sequence of alphanumeric characters
+• Document = sequence of words (ignore space, punctuation, etc.)
