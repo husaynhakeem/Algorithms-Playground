@@ -1,4 +1,4 @@
-package mit_course_6006.lecture_1.peakfinder_twodimensions;
+package mit_course_6006.lecture_01.peakfinder_twodimensions;
 
 import javafx.util.Pair;
 import org.junit.Test;

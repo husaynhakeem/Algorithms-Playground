@@ -1,10 +1,10 @@
-package mit_course_6006.lecture_1.peakfinder_twodimensions;
+package mit_course_6006.lecture_01.peakfinder_twodimensions;
 
 import javafx.util.Pair;
 
 class Solution {
 
-    private final mit_course_6006.lecture_1.peakfinder_onedimension.Solution oneDimensionalPeakFinder = new mit_course_6006.lecture_1.peakfinder_onedimension.Solution();
+    private final mit_course_6006.lecture_01.peakfinder_onedimension.Solution oneDimensionalPeakFinder = new mit_course_6006.lecture_01.peakfinder_onedimension.Solution();
 
     Pair<Integer, Integer> findPeak(int[][] matrix) {
         if (matrix == null || matrix.length == 0) {

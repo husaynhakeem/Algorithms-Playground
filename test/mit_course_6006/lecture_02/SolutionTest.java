@@ -1,4 +1,4 @@
-package mit_course_6006.lecture_2;
+package mit_course_6006.lecture_02;
 
 import Utilities.java.ListUtils;
 import Utilities.java.MapUtils;

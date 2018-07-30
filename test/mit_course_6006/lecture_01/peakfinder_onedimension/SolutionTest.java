@@ -1,4 +1,4 @@
-package mit_course_6006.lecture_1.peakfinder_onedimension;
+package mit_course_6006.lecture_01.peakfinder_onedimension;
 
 import org.junit.Test;
 
