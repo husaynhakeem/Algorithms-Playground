@@ -2,7 +2,7 @@ package mit_course_6006.lecture_03.insertion_sort;
 
 public class Solution {
 
-    void sort(int[] array) {
+    void sort(final int[] array) {
         if (array == null) {
             return;
         }
