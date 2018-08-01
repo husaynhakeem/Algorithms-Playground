@@ -31,4 +31,14 @@ public class ArrayUtils {
 
         System.out.println(sb.toString());
     }
+
+    public static int max(int[] array) {
+        int max = Integer.MIN_VALUE;
+        for (Integer n : array) {
+            if (n > max) {
+                max = n;
+            }
+        }
+        return max;
+    }
 }
