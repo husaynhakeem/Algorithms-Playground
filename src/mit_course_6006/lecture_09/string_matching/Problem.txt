@@ -1,0 +1,2 @@
+Given two strings s and t, does s occur as a substring of t? (and if so, where and how many times?)
+E.g. s = ‘6.006’ and t = your entire INBOX

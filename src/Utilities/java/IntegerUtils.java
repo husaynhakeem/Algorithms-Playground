@@ -16,4 +16,16 @@ public class IntegerUtils {
 
         return true;
     }
+
+    public static int firstPrimeBiggerThan(int n) {
+        if (n <= 0) {
+            n = 1;
+        }
+
+        for (int i = n + 1; ; i++) {
+            if (isPrime(i)) {
+                return i;
+            }
+        }
+    }
 }
