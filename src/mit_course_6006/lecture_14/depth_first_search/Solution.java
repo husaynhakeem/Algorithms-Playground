@@ -40,12 +40,4 @@ class Solution {
             }
         }
     }
-
-    private Hashtable<Vertex, List<Vertex>> adjecentsMapOf(final List<Vertex> universe) {
-        final Hashtable<Vertex, List<Vertex>> adjacents = new Hashtable<>();
-        for (Vertex v : universe) {
-            adjacents.put(v, v.adjacents);
-        }
-        return adjacents;
-    }
 }
