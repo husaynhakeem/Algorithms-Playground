@@ -1,5 +1,7 @@
 package Utilities.java;
 
+import org.jetbrains.annotations.NotNull;
+
 public class ArrayUtils {
 
     public static void printArrayOfInts(int[] array) {
@@ -40,5 +42,22 @@ public class ArrayUtils {
             }
         }
         return max;
+    }
+
+    public static boolean areArraysEqual(@NotNull int[] array1, @NotNull int[] array2) {
+        final int length1 = array1.length;
+        final int length2 = array2.length;
+
+        if (length1 != length2) {
+            return false;
+        }
+
+        for (int i = 0; i < length1; i++) {
+            if (array1[i] != array2[i]) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
