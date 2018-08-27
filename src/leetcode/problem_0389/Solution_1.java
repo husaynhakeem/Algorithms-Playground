@@ -2,7 +2,7 @@ package leetcode.problem_0389;
 
 import java.util.HashMap;
 
-public class Solution {
+public class Solution_1 {
 
     char findTheDifference(String s, String t) {
         final HashMap<Character, Integer> charsAndFreqs = new HashMap<>();
