@@ -6,10 +6,15 @@ import java.util.List;
 class Solution {
 
     List<String> letterCasePermutation(String S) {
-        if (S != null && S.length() > 0) {
-            return computePerms(S, 0);
+        if (S == null) {
+            return new ArrayList<>();
         }
-        return new ArrayList<>();
+        if (S.length() == 0) {
+            final List<String> result = new ArrayList<>();
+            result.add("");
+            return result;
+        }
+        return computePerms(S, 0);
     }
 
     private List<String> computePerms(final String s, final int index) {
