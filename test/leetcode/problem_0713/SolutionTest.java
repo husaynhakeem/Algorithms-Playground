@@ -4,9 +4,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class Solution_1Test {
+public class SolutionTest {
 
-    private final Solution_1 solution = new Solution_1();
+    private final Solution solution = new Solution();
 
     @Test
     public void numSubarrayProductLessThanK_1() throws Exception {

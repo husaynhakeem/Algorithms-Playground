@@ -1,6 +1,6 @@
 package leetcode.problem_0713;
 
-class Solution_1 {
+class Solution {
 
     int numSubarrayProductLessThanK(int[] nums, int k) {
         final int length = nums.length;
