@@ -1,30 +1,26 @@
 package cracking_the_coding_interview.chapter_02.exercise_06;
 
-import Utilities.java.LinkedListUtils.Node;
+class Solution_2 {
 
-import static Utilities.java.LinkedListUtils.createLinkedListFrom;
+    static class Node {
+        int val;
+        Node next;
 
-public class Solution_2 {
-
-    public static void main(String[] args) {
-        Node first = createLinkedListFrom(1, 2, 3, 4, 3, 2, 1);
-        System.out.println(isPalindrome(first));
-
-        Node second = createLinkedListFrom(3, 4, 5, 6);
-        System.out.println(isPalindrome(second));
+        public Node(int val) {
+            this.val = val;
+        }
     }
 
-    // Reverse linked list and compare
-    private static boolean isPalindrome(Node node) {
+    boolean isPalindrome(Node node) {
         Node reversedNode = reverseLinkedList(node);
         return compareLinkedLists(node, reversedNode);
     }
 
-    private static Node reverseLinkedList(Node node) {
+    private Node reverseLinkedList(Node node) {
         Node reversedNode = null;
 
-        while(node != null) {
-            Node temp = new Node(node.data);
+        while (node != null) {
+            Node temp = new Node(node.val);
             temp.next = reversedNode;
             reversedNode = temp;
             node = node.next;
@@ -33,9 +29,9 @@ public class Solution_2 {
         return reversedNode;
     }
 
-    private static boolean compareLinkedLists(Node first, Node second) {
+    private boolean compareLinkedLists(Node first, Node second) {
         while (first != null && second != null) {
-            if (first.data != second.data)
+            if (first.val != second.val)
                 return false;
             first = first.next;
             second = second.next;

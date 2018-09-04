@@ -1,29 +1,26 @@
 package cracking_the_coding_interview.chapter_02.exercise_06;
 
-import Utilities.java.LinkedListUtils.Node;
-
 import java.util.Stack;
 
-import static Utilities.java.LinkedListUtils.createLinkedListFrom;
+class Solution_4 {
 
-public class Solution_4 {
+    static class Node {
+        int val;
+        Node next;
 
-    public static void main(String[] args) {
-        Node first = createLinkedListFrom(1, 2, 3, 4, 3, 2, 1);
-        System.out.println(isPalindrome(first));
-
-        Node second = createLinkedListFrom(3, 4, 5, 6);
-        System.out.println(isPalindrome(second));
+        public Node(int val) {
+            this.val = val;
+        }
     }
 
-    private static boolean isPalindrome(Node node) {
+    boolean isPalindrome(Node node) {
         Stack<Integer> stack = new Stack<>();
 
         Node fast = node;
         Node slow = node;
 
-        while(fast != null && fast.next != null) {
-            stack.push(slow.data);
+        while (fast != null && fast.next != null) {
+            stack.push(slow.val);
             slow = slow.next;
             fast = fast.next.next;
         }
@@ -32,7 +29,7 @@ public class Solution_4 {
             slow = slow.next;
 
         while (slow != null) {
-            if (stack.pop() != slow.data)
+            if (stack.pop() != slow.val)
                 return false;
             slow = slow.next;
         }
