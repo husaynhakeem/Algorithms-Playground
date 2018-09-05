@@ -1,20 +1,17 @@
 package cracking_the_coding_interview.chapter_02.exercise_05;
 
-import Utilities.java.LinkedListUtils;
-import Utilities.java.LinkedListUtils.Node;
+class Solution_1 {
 
-public class Solution_1 {
+    static class Node {
+        int val;
+        Node next;
 
-    public static void main(String[] args) {
-        Node first = LinkedListUtils.createLinkedListFrom(1, 2);
-        Node second = LinkedListUtils.createLinkedListFrom(3, 4, 5, 6);
-
-        Node sum = sumLists(first, second, true);
-
-        LinkedListUtils.printLinkedList(sum);
+        public Node(int val) {
+            this.val = val;
+        }
     }
 
-    private static Node sumLists(Node first, Node second, boolean reverse) {
+    Node sumLists(Node first, Node second, boolean reverse) {
         String strFirst = fromLinkedListToString(first);
         String strSecond = fromLinkedListToString(second);
 
@@ -31,20 +28,20 @@ public class Solution_1 {
         return fromStringToLinkedList(strSum);
     }
 
-    private static String fromLinkedListToString(Node root) {
+    private String fromLinkedListToString(Node root) {
         StringBuilder sb = new StringBuilder();
 
         while (root != null) {
-            sb.append(root.data);
+            sb.append(root.val);
             root = root.next;
         }
 
         return sb.toString();
     }
 
-    private static Node fromStringToLinkedList(String input) {
-        Node node = new Node();
-        Node result = new Node();
+    private Node fromStringToLinkedList(String input) {
+        Node node = new Node(0);
+        Node result = new Node(0);
         Node temp;
         boolean isRoot = true;
 
@@ -67,13 +64,13 @@ public class Solution_1 {
         return result;
     }
 
-    private static String reverseString(String input) {
+    private String reverseString(String input) {
         StringBuilder sb = new StringBuilder(input);
         sb = sb.reverse();
         return sb.toString();
     }
 
-    private static boolean isDigit(Character c) {
+    private boolean isDigit(Character c) {
         return '0' <= c && c <= '9';
     }
 }

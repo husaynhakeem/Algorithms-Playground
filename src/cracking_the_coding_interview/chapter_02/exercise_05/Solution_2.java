@@ -1,47 +1,42 @@
 package cracking_the_coding_interview.chapter_02.exercise_05;
 
-import Utilities.java.LinkedListUtils;
-import Utilities.java.LinkedListUtils.*;
-
-import static Utilities.java.LinkedListUtils.createLinkedListFrom;
-
 public class Solution_2 {
 
-    public static void main(String[] args) {
-        Node first = createLinkedListFrom(1, 2);
-        Node second = createLinkedListFrom(3, 4, 5, 6);
+    static class Node {
+        int val;
+        Node next;
 
-        Node sum = sumLists(first, second);
-
-        LinkedListUtils.printLinkedList(sum);
+        public Node(int val) {
+            this.val = val;
+        }
     }
 
-    private static Node sumLists(Node first, Node second) {
+    Node sumLists(Node first, Node second) {
         return sumLists(first, second, 0);
     }
 
-    private static Node sumLists(Node first, Node second, int carry) {
+    private Node sumLists(Node first, Node second, int carry) {
 
         if (first == null && second == null && carry == 0)
             return null;
 
-        Node root = new Node();
+        Node root = new Node(0);
 
         if (first != null)
-            root.data += first.data;
+            root.val += first.val;
 
         if (second != null)
-            root.data += second.data;
+            root.val += second.val;
 
-        root.data += carry;
+        root.val += carry;
 
         root.next = sumLists(
                 (first == null) ? null : first.next,
                 (second == null) ? null : second.next,
-                (root.data >= 10) ? 1 : 0
+                (root.val >= 10) ? 1 : 0
         );
 
-        root.data = root.data % 10;
+        root.val = root.val % 10;
 
         return root;
     }
