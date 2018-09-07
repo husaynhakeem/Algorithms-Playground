@@ -1,6 +1,6 @@
 package mit_course_6006.lecture_16.djikstra;
 
-import javafx.util.Pair;
+import kotlin.Pair;
 
 import java.util.ArrayList;
 import java.util.List;

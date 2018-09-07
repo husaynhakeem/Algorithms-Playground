@@ -1,6 +1,6 @@
 package mit_course_6006.lecture_01.peakfinder_twodimensions;
 
-import javafx.util.Pair;
+import kotlin.Pair;
 
 class Solution {
 

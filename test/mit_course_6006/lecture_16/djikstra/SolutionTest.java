@@ -1,7 +1,7 @@
 package mit_course_6006.lecture_16.djikstra;
 
 import Utilities.java.ListUtils;
-import javafx.util.Pair;
+import kotlin.Pair;
 import org.junit.Test;
 
 import java.util.HashMap;

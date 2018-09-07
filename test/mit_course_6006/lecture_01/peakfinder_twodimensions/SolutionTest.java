@@ -1,6 +1,6 @@
 package mit_course_6006.lecture_01.peakfinder_twodimensions;
 
-import javafx.util.Pair;
+import kotlin.Pair;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ public class SolutionTest {
         final List<Integer> peaks = new ArrayList<>();
         peaks.add(3);
         peaks.add(2);
-        assertTrue(peaks.contains(matrix[peakCoords.getKey()][peakCoords.getValue()]));
+        assertTrue(peaks.contains(matrix[peakCoords.getFirst()][peakCoords.getSecond()]));
     }
 
     @Test
@@ -38,8 +38,8 @@ public class SolutionTest {
 
         final Pair<Integer, Integer> peakCoords = solution.findPeak(matrix);
 
-        assertEquals(1, (int) peakCoords.getKey());
-        assertEquals(1, (int) peakCoords.getValue());
+        assertEquals(1, (int) peakCoords.getFirst());
+        assertEquals(1, (int) peakCoords.getSecond());
     }
 
     @Test
@@ -48,7 +48,7 @@ public class SolutionTest {
 
         final Pair<Integer, Integer> peakCoords = solution.findPeak(matrix);
 
-        assertEquals(-1, (int) peakCoords.getKey());
-        assertEquals(-1, (int) peakCoords.getValue());
+        assertEquals(-1, (int) peakCoords.getFirst());
+        assertEquals(-1, (int) peakCoords.getSecond());
     }
 }
