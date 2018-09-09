@@ -5,16 +5,16 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
-public class Solution_1Test {
+public class SolutionTest {
 
     @Test
     public void testAnimalShelter() throws Exception {
-        final Solution_1 solution = new Solution_1();
-        solution.enqueue(new Solution_1.Cat("Tony"));
-        solution.enqueue(new Solution_1.Cat("Moucha"));
-        solution.enqueue(new Solution_1.Dog("Doge"));
-        solution.enqueue(new Solution_1.Cat("Stray cat"));
-        solution.enqueue(new Solution_1.Dog("Stray dog"));
+        final Solution solution = new Solution();
+        solution.enqueue(new Solution.Cat("Tony"));
+        solution.enqueue(new Solution.Cat("Moucha"));
+        solution.enqueue(new Solution.Dog("Doge"));
+        solution.enqueue(new Solution.Cat("Stray cat"));
+        solution.enqueue(new Solution.Dog("Stray dog"));
 
         assertEquals("Tony", solution.dequeueAny().name);
         assertEquals("Moucha", solution.dequeueCat().name);

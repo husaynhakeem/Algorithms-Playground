@@ -4,7 +4,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.LinkedList;
 
-public class Solution_1 {
+public class Solution {
 
     private final LinkedList<Cat> cats = new LinkedList<>();
     private final LinkedList<Dog> dogs = new LinkedList<>();
