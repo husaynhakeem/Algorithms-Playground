@@ -6,9 +6,9 @@ import org.junit.Test;
 import static Utilities.java.TreeUtils.areTreesEqual;
 import static org.junit.Assert.assertTrue;
 
-public class Solution_1Test {
+public class SolutionTest {
 
-    private final Solution_1 solution = new Solution_1();
+    private final Solution solution = new Solution();
 
     @Test
     public void minimalTree() throws Exception {

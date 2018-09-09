@@ -2,7 +2,7 @@ package cracking_the_coding_interview.chapter_04.exercise_02;
 
 import Utilities.java.TreeUtils.Node;
 
-public class Solution_1 {
+public class Solution {
 
     Node minimalTree(int[] array) {
         return minimalTree(array, 0, array.length - 1);
