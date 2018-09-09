@@ -2,7 +2,7 @@ package cracking_the_coding_interview.chapter_03.exercise_04;
 
 import java.util.Stack;
 
-class Solution<T> {
+class Solution_1<T> {
 
     private final Stack<T> stack1 = new Stack<>();
     private final Stack<T> stack2 = new Stack<>();

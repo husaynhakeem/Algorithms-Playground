@@ -4,11 +4,11 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class SolutionTest {
+public class Solution_1Test {
 
     @Test
     public void testMyQueue() throws Exception {
-        final Solution<Integer> solution = new Solution<>();
+        final Solution_1<Integer> solution = new Solution_1<>();
 
         assertTrue(solution.isEmpty());
 
