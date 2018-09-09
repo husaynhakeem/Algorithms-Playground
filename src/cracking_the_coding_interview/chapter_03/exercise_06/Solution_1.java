@@ -1,90 +1,64 @@
 package cracking_the_coding_interview.chapter_03.exercise_06;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.LinkedList;
 
 public class Solution_1 {
 
-    public static void main(String[] args) {
-        AnimalShelter animalShelter = new AnimalShelter();
+    private final LinkedList<Cat> cats = new LinkedList<>();
+    private final LinkedList<Dog> dogs = new LinkedList<>();
+    private int order = 0;
 
-        animalShelter.enqueue(new Cat("Tony"));
-        animalShelter.enqueue(new Cat("Moucha"));
-        animalShelter.enqueue(new Dog("Doge"));
-        animalShelter.enqueue(new Cat("Stray cat"));
-        animalShelter.enqueue(new Dog("Stray dog"));
-
-        System.out.println(animalShelter.dequeueAny());
-        System.out.println(animalShelter.dequeueDog());
-        System.out.println(animalShelter.dequeueAny());
-        System.out.println(animalShelter.dequeueDog());
-        System.out.println(animalShelter.dequeueCat());
+    void enqueue(@NotNull final Animal animal) {
+        animal.order = order++;
+        if (animal instanceof Cat) {
+            cats.addLast((Cat) animal);
+        } else if (animal instanceof Dog) {
+            dogs.addLast((Dog) animal);
+        }
     }
 
-    private static class AnimalShelter {
-        private LinkedList<Cat> cats = new LinkedList<>();
-        private LinkedList<Dog> dogs = new LinkedList<>();
-        private int order = 0;
+    Animal dequeueAny() {
+        final Cat cat = cats.isEmpty() ? null : cats.peekFirst();
+        final Dog dog = dogs.isEmpty() ? null : dogs.peekFirst();
 
-        public void enqueue(Animal animal) {
-            animal.order = order++;
-            if (animal instanceof Cat) {
-                cats.addLast((Cat) animal);
-            } else if (animal instanceof Dog) {
-                dogs.addLast((Dog) animal);
-            }
+        if (cat == null) {
+            return dogs.pollFirst();
         }
 
-        public Animal dequeueAny() {
-            Cat cat = cats.peekFirst();
-            Dog dog = dogs.peekFirst();
-
-            if (cat.isOlderThan(dog))
-                return dequeueCat();
-            return dequeueDog();
-        }
-
-        public Cat dequeueCat() {
-            if (cats.isEmpty())
-                return null;
+        if (dog == null) {
             return cats.pollFirst();
         }
 
-        public Dog dequeueDog() {
-            if (dogs.isEmpty())
-                return null;
-            return dogs.pollFirst();
-        }
+        return cat.order < dog.order ? cats.removeFirst() : dogs.removeFirst();
     }
 
-    private static class Animal {
-        public int order;
-        public String name;
+    Cat dequeueCat() {
+        return cats.pollFirst();
+    }
 
-        public Animal() {
-        }
+    Dog dequeueDog() {
+        return dogs.pollFirst();
+    }
 
-        public Animal(String name) {
+    static class Animal {
+        int order;
+        String name;
+
+        Animal(String name) {
             this.name = name;
         }
-
-        public boolean isOlderThan(Animal a) {
-            return this.order < a.order;
-        }
-
-        @Override
-        public String toString() {
-            return name;
-        }
     }
 
-    private static class Cat extends Animal {
-        public Cat(String name) {
+    static class Cat extends Animal {
+        Cat(String name) {
             super(name);
         }
     }
 
-    private static class Dog extends Animal {
-        public Dog(String name) {
+    static class Dog extends Animal {
+        Dog(String name) {
             super(name);
         }
     }
