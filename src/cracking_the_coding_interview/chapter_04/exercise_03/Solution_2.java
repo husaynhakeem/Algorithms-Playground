@@ -1,67 +1,35 @@
 package cracking_the_coding_interview.chapter_04.exercise_03;
 
-import Utilities.java.GraphUtils.TreeNode;
+import Utilities.java.TreeUtils.Node;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
-public class Solution_2 {
+class Solution_2 {
 
-    public static void main(String[] args) {
-        TreeNode one = new TreeNode(1);
-        TreeNode two = new TreeNode(2);
-        TreeNode three = new TreeNode(3);
-        TreeNode four = new TreeNode(4);
-        TreeNode five = new TreeNode(5);
-        TreeNode six = new TreeNode(6);
-        TreeNode seven = new TreeNode(7);
-        TreeNode eight = new TreeNode(8);
-        TreeNode nine = new TreeNode(9);
+    List<List<Node>> listOfDepths(@NotNull final Node root) {
+        final List<List<Node>> allDepths = new ArrayList<>();
 
-        five.left = two;
-        five.right = seven;
+        List<Node> level = new ArrayList<>();
+        level.add(root);
 
-        two.left = one;
-        two.right = three;
+        while (!level.isEmpty()) {
+            allDepths.add(level);
 
-        three.right = four;
+            final List<Node> parents = level;
+            level = new ArrayList<>();
 
-        seven.left = six;
-        seven.right = eight;
-
-        eight.right = nine;
-
-        List<LinkedList<TreeNode>> result = getListOfTreeNodes(five);
-        System.out.println("Depth: " + result.size());
-        for (int i = 0; i < result.size(); i++) {
-            LinkedList<TreeNode> nodesForDepth = result.get(i);
-            System.out.println("Depth: " + (i + 1) + ", nodes: " + nodesForDepth);
-        }
-    }
-
-    private static List<LinkedList<TreeNode>> getListOfTreeNodes(TreeNode root) {
-        List<LinkedList<TreeNode>> list = new ArrayList<>();
-
-        LinkedList<TreeNode> current = new LinkedList<>();
-        if (root != null)
-            current.add(root);
-
-        while (!current.isEmpty()) {
-            list.add(current);
-
-            LinkedList<TreeNode> parents = current;
-            current = new LinkedList<>();
-
-            for (TreeNode parent : parents) {
-                if (parent.left != null)
-                    current.add(parent.left);
-
-                if (parent.right != null)
-                    current.add(parent.right);
+            for (Node parent : parents) {
+                if (parent.left != null) {
+                    level.add(parent.left);
+                }
+                if (parent.right != null) {
+                    level.add(parent.right);
+                }
             }
         }
 
-        return list;
+        return allDepths;
     }
 }
