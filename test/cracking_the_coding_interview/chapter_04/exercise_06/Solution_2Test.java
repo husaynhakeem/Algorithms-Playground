@@ -1,14 +1,14 @@
 package cracking_the_coding_interview.chapter_04.exercise_06;
 
-import cracking_the_coding_interview.chapter_04.exercise_06.Solution_1.Node;
+import cracking_the_coding_interview.chapter_04.exercise_06.Solution_2.Node;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
-public class Solution_1Test {
+public class Solution_2Test {
 
-    private final Solution_1 solution = new Solution_1();
+    private final Solution_2 solution = new Solution_2();
 
     @Test
     public void findSuccessor_1() throws Exception {
