@@ -1,4 +1,4 @@
-package amazon;
+package misc;
 
 import java.util.*;
 
