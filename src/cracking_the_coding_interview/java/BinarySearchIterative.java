@@ -2,7 +2,7 @@ package cracking_the_coding_interview.java;
 
 import org.jetbrains.annotations.NotNull;
 
-class BinarySearch_Iterative {
+class BinarySearchIterative {
 
     int search(@NotNull final int[] array, final int x) {
         int low = 0;

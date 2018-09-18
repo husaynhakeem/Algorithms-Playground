@@ -4,9 +4,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class BinarySearch_IterativeTest {
+public class BinarySearchRecursiveTest {
 
-    private final BinarySearchIterative binarySearch = new BinarySearchIterative();
+    private BinarySearchRecursive binarySearch = new BinarySearchRecursive();
 
     @Test
     public void search_1() throws Exception {
