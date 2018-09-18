@@ -1,28 +1,13 @@
 package cracking_the_coding_interview.java;
 
-import static Utilities.java.ArrayUtils.printArrayOfInts;
+import org.jetbrains.annotations.NotNull;
 
-public class BubbleSort {
+class BubbleSort {
 
-    public static void main(String[] args) {
-        int[] first = new int[]{10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
-        bubbleSort(first);
-        printArrayOfInts(first);
-
-        int[] second = new int[]{5, 4, 6, 9, 1, 3, 2, 7, 0, 10, 8};
-        bubbleSort(second);
-        printArrayOfInts(second);
-    }
-
-    private static void bubbleSort(int[] array) {
-        if (array == null)
-            return;
-
+    void sort(@NotNull final int[] array) {
         boolean swapped;
-
         do {
             swapped = false;
-
             for (int i = 0; i < array.length - 1; i++) {
                 if (array[i] > array[i + 1]) {
                     int temp = array[i];
@@ -31,7 +16,6 @@ public class BubbleSort {
                     swapped = true;
                 }
             }
-
         } while (swapped);
     }
 }
