@@ -1,0 +1,3 @@
+Number swapper
+
+Write a function to swap a number in place, that is, without using temporary variables.
