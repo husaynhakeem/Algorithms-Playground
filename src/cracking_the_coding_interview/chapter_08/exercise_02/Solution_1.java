@@ -1,106 +1,85 @@
 package cracking_the_coding_interview.chapter_08.exercise_02;
 
-import java.util.ArrayList;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Arrays;
 import java.util.List;
+import java.util.Stack;
 
-public class Solution_1 {
+class Solution_1 {
 
-    public static void main(String[] args) {
-        Cell[][] cells = new Cell[3][3];
-        cells[0][0] = new Cell(0, 0, 0);
-        cells[0][1] = new Cell(-1, 0, 1);
-        cells[0][2] = new Cell(-1, 0, 2);
-        cells[1][0] = new Cell(0, 1, 0);
-        cells[1][1] = new Cell(0, 1, 1);
-        cells[1][2] = new Cell(0, 1, 2);
-        cells[2][0] = new Cell(0, 2, 0);
-        cells[2][1] = new Cell(-1, 2, 1);
-        cells[2][2] = new Cell(0, 2, 2);
+    static class Coordinates {
 
-        CellsGrid grid = new CellsGrid(cells);
+        final int line;
+        final int column;
+        final boolean isOffLimits;
 
-        List<Cell> route = findRouteFromLeftUpperCornerToRightBottomCorner(grid);
+        Coordinates(int line, int column) {
+            this.line = line;
+            this.column = column;
+            this.isOffLimits = false;
+        }
 
-        if (route == null || route.size() == 0)
-            System.out.println("No route found");
-        else
-            for (Cell cell : route) {
-                System.out.println(cell.x + ", " + cell.y);
+        Coordinates(int line, int column, boolean isOffLimits) {
+            this.line = line;
+            this.column = column;
+            this.isOffLimits = isOffLimits;
+        }
+
+        Coordinates left() {
+            return new Coordinates(line, column - 1);
+        }
+
+        Coordinates top() {
+            return new Coordinates(line - 1, column);
+        }
+
+        boolean isOrigin() {
+            return line == 0 && column == 0;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (!(obj instanceof Coordinates)) {
+                return false;
             }
+            final Coordinates coordinatesObj = (Coordinates) obj;
+            return line == coordinatesObj.line && column == coordinatesObj.column;
+        }
     }
 
-    private static List<Cell> findRouteFromLeftUpperCornerToRightBottomCorner(CellsGrid grid) {
-        if (grid.rowsSize() == 0 || grid.columnsSize() == 0)
-            return null;
-
-        List<Cell> route = new ArrayList<>();
-        findRouteFromLeftUpperCornerToRightBottomCorner(grid, grid.cells[0][0], route);
-
-        return route;
+    List<Coordinates> robotInGrid(@NotNull Coordinates[][] grid) {
+        final int lines = grid.length;
+        final int columns = grid[0].length;
+        final Stack<Coordinates> result = new Stack<>();
+        robotInGrid(grid, grid[lines - 1][columns - 1], result);
+        return Arrays.asList(result.toArray(new Coordinates[result.size()]));
     }
 
-    private static boolean findRouteFromLeftUpperCornerToRightBottomCorner(CellsGrid grid, Cell cell, List<Cell> route) {
-        if (cell == null || cell.visited || cell.value == -1)
-            return false;
-
-        route.add(cell);
-
-        Cell cellToRight = grid.cellToRightOf(cell);
-        Cell cellToBottom = grid.cellToBottomOf(cell);
-
-        if (cellToRight == null && cellToBottom == null)
+    private boolean robotInGrid(@NotNull Coordinates[][] grid, @NotNull final Coordinates destination, final Stack<Coordinates> result) {
+        if (destination.isOrigin()) {
+            result.push(destination);
             return true;
+        }
 
-        if (findRouteFromLeftUpperCornerToRightBottomCorner(grid, cellToRight, route))
-            return true;
+        final Coordinates top = destination.top();
+        if (top.line >= 0 && !grid[top.line][top.column].isOffLimits) {
+            final boolean isValidRoute = robotInGrid(grid, top, result);
+            if (isValidRoute) {
+                result.push(destination);
+                return true;
+            }
+        }
 
-        if (findRouteFromLeftUpperCornerToRightBottomCorner(grid, cellToBottom, route))
-            return true;
+        final Coordinates left = destination.left();
+        if (left.column >= 0 && !grid[left.line][left.column].isOffLimits) {
+            final boolean isValidRoute = robotInGrid(grid, left, result);
+            if (isValidRoute) {
+                result.push(destination);
+                return true;
+            }
+        }
 
-        route.remove(cell);
         return false;
-    }
-
-    private static class CellsGrid {
-        Cell[][] cells;
-
-        CellsGrid(Cell[][] cells) {
-            this.cells = cells;
-        }
-
-        int rowsSize() {
-            if (cells.length > 0)
-                return cells[0].length;
-            return 0;
-        }
-
-        int columnsSize() {
-            return cells.length;
-        }
-
-        Cell cellToRightOf(Cell cell) {
-            if (cells.length > 0 && cell.x < cells[0].length - 1)
-                return cells[cell.x + 1][cell.y];
-            return null;
-        }
-
-        Cell cellToBottomOf(Cell cell) {
-            if (cells.length > 0 && cell.y < cells.length - 1)
-                return cells[cell.x][cell.y + 1];
-            return null;
-        }
-    }
-
-    private static class Cell {
-        int value;
-        int x;
-        int y;
-        boolean visited = false;
-
-        Cell(int value, int x, int y) {
-            this.value = value;
-            this.x = x;
-            this.y = y;
-        }
     }
 }

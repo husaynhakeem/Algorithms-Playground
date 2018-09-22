@@ -1,15 +1,15 @@
 package cracking_the_coding_interview.chapter_08.exercise_02;
 
-import cracking_the_coding_interview.chapter_08.exercise_02.Solution_3.Coordinates;
+import cracking_the_coding_interview.chapter_08.exercise_02.Solution_1.Coordinates;
 import org.junit.Test;
 
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class Solution_3Test {
+public class Solution_1Test {
 
-    private final Solution_3 solution = new Solution_3();
+    private final Solution_1 solution = new Solution_1();
 
     @Test
     public void robotInGrid_1() throws Exception {

@@ -2,9 +2,9 @@ package cracking_the_coding_interview.chapter_08.exercise_02;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.Stack;
 
 class Solution_2 {
 
@@ -26,15 +26,15 @@ class Solution_2 {
             this.isOffLimits = isOffLimits;
         }
 
-        Coordinates left() {
-            return new Coordinates(line, column - 1);
+        Coordinates right() {
+            return new Coordinates(line, column + 1);
         }
 
-        Coordinates top() {
-            return new Coordinates(line - 1, column);
+        Coordinates bottom() {
+            return new Coordinates(line + 1, column);
         }
 
-        boolean isOrigin() {
+        boolean isLeftMostBottomCell() {
             return line == 0 && column == 0;
         }
 
@@ -51,31 +51,32 @@ class Solution_2 {
     List<Coordinates> robotInGrid(@NotNull Coordinates[][] grid) {
         final int lines = grid.length;
         final int columns = grid[0].length;
-        final Stack<Coordinates> result = new Stack<>();
-        robotInGrid(grid, grid[lines - 1][columns - 1], result);
-        return Arrays.asList(result.toArray(new Coordinates[result.size()]));
+        final List<Coordinates> result = new ArrayList<>();
+        robotInGrid(grid, lines, columns, grid[0][0], result);
+        Collections.reverse(result);
+        return result;
     }
 
-    private boolean robotInGrid(@NotNull Coordinates[][] grid, @NotNull final Coordinates destination, final Stack<Coordinates> result) {
-        if (destination.isOrigin()) {
-            result.push(destination);
+    private boolean robotInGrid(@NotNull final Coordinates[][] grid, final int lines, final int columns, final Coordinates origin, final List<Coordinates> result) {
+        if (origin.line == lines - 1 && origin.column == columns - 1) {
+            result.add(origin);
             return true;
         }
 
-        final Coordinates top = destination.top();
-        if (top.line >= 0 && !grid[top.line][top.column].isOffLimits) {
-            final boolean isValidRoute = robotInGrid(grid, top, result);
+        final Coordinates right = origin.right();
+        if (right.column < columns && !grid[right.line][right.column].isOffLimits) {
+            final boolean isValidRoute = robotInGrid(grid, lines, columns, right, result);
             if (isValidRoute) {
-                result.push(destination);
+                result.add(origin);
                 return true;
             }
         }
 
-        final Coordinates left = destination.left();
-        if (left.column >= 0 && !grid[left.line][left.column].isOffLimits) {
-            final boolean isValidRoute = robotInGrid(grid, left, result);
+        final Coordinates bottom = origin.bottom();
+        if (bottom.line < lines && !grid[bottom.line][bottom.column].isOffLimits) {
+            final boolean isValidRoute = robotInGrid(grid, lines, columns, bottom, result);
             if (isValidRoute) {
-                result.push(destination);
+                result.add(origin);
                 return true;
             }
         }
