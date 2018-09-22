@@ -1,21 +1,14 @@
 package cracking_the_coding_interview.chapter_08.exercise_01;
 
-public class Solution_2 {
+class Solution_2 {
 
-    public static void main(String[] args) {
-        System.out.println(countWays(1));
-        System.out.println(countWays(5));
-        System.out.println(countWays(10));
-        System.out.println(countWays(20));
-        System.out.println(countWays(30));
-        System.out.println(countWays(35));
-    }
-
-    private static int countWays(int n) {
-        if (n < 0)
+    int tripleStep(final int n) {
+        if (n < 0) {
             return 0;
-        if (n == 0)
+        }
+        if (n == 0) {
             return 1;
+        }
 
         int a = 0;
         int b = 0;
