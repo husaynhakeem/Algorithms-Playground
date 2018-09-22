@@ -36,24 +36,24 @@ public class Solution_1Test {
     @Test
     public void sortedMatrixSearch_3() throws Exception {
         final int[][] matrix = {
+                {0, 1, 2, 3, 4, 5, 9},
                 {2, 5, 8, 19, 29, 36, 18},
                 {23, 27, 39, 40, 67, 129, 189},
-                {0, 1, 2, 3, 4, 5, 9},
         };
         final int x = 9;
 
         final MatrixIndex result = solution.sortedMatrixSearch(matrix, x);
 
-        assertEquals(2, result.line);
+        assertEquals(0, result.line);
         assertEquals(6, result.column);
     }
 
     @Test
     public void sortedMatrixSearch_4() throws Exception {
         final int[][] matrix = {
+                {0, 1, 2, 3, 4, 5, 9},
                 {2, 5, 8, 19, 29, 36, 18},
                 {23, 27, 39, 40, 67, 129, 189},
-                {0, 1, 2, 3, 4, 5, 9},
         };
         final int x = 190;
 

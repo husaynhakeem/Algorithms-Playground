@@ -25,6 +25,10 @@ class Solution_1 {
         final int columns = matrix[0].length;
 
         for (int i = 0; i < lines; i++) {
+            if (matrix[i][0] > x || matrix[i][columns - 1] < x) {
+                continue;
+            }
+
             final int index = search(matrix, x, i, columns);
             if (index != -1) {
                 return new MatrixIndex(i, index);
