@@ -1,20 +1,13 @@
 package cracking_the_coding_interview.chapter_08.exercise_07;
 
-import Utilities.java.ListUtils;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class Solution_1 {
+class Solution {
 
-    public static void main(String[] args) {
-        ListUtils.printList(computePerms("abc"));
-        ListUtils.printList(computePerms("abcd"));
-    }
+    List<String> permutationsWithoutDups(final String word) {
 
-    private static List<String> computePerms(String word) {
-
-        List<String> allPerms = new ArrayList<>();
+        final List<String> allPerms = new ArrayList<>();
 
         if (word.length() <= 1) {
             allPerms.add(word);
@@ -37,13 +30,11 @@ public class Solution_1 {
         return allPerms;
     }
 
-    private static List<String> getPermsFor(char c, String word) {
-        List<String> perms = new ArrayList<>();
-
+    private List<String> getPermsFor(final char c, final String word) {
+        final List<String> perms = new ArrayList<>();
         for (int i = 0; i < word.length(); i++) {
             perms.add(word.substring(0, i) + c + word.substring(i, word.length()));
         }
-
         perms.add(word + c);
         return perms;
     }
