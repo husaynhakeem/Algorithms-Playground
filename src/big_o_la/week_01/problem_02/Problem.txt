@@ -1,0 +1,5 @@
+Merge two BSTs
+
+Write a function that merges two given balanced BSTs into a balanced binary search tree. Let there be n elements in first tree and m elements in the other tree.
+
+Solution runtime: O(n + m) where n is the number of nodes in tree one and m is the number of nodes in tree two
