@@ -14,6 +14,6 @@ public class Solution_1Test {
 
         final int result = solution.sumOfMultiplesOfThreeOrFiveSmallerThan(n);
 
-        assertEquals(234168, result);
+        assertEquals(233168, result);
     }
 }

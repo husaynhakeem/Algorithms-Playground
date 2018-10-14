@@ -6,22 +6,18 @@ class Solution_1 {
         int first = 0;
         int second = 1;
         int third = first + second;
+        int sum = 0;
 
-        int evenValuesSum = 0;
         while (first + second < n) {
-            if (isEven(first)) {
-                evenValuesSum += first;
-            }
-
-            if (isEven(second)) {
-                evenValuesSum += second;
+            if (isEven(third)) {
+                sum += third;
             }
 
             first = second;
             second = third;
             third = first + second;
         }
-        return evenValuesSum;
+        return sum;
     }
 
     private boolean isEven(final int n) {

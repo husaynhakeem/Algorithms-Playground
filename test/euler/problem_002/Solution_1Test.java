@@ -14,6 +14,6 @@ public class Solution_1Test {
 
         final int result = solution.sumOfEvenValuedFibonacciValuesSmallerThan(n);
 
-        assertEquals(2_178_308, result);
+        assertEquals(4_613_732, result);
     }
 }
