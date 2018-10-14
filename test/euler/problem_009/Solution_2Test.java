@@ -1,4 +1,4 @@
-package euler.problem_008;
+package euler.problem_009;
 
 import org.junit.Test;
 
