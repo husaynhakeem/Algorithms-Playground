@@ -7,9 +7,9 @@ import java.util.Set;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class Solution_1Test {
+public class Solution_2Test {
 
-    private final Solution_1 solution = new Solution_1();
+    private final Solution_2 solution = new Solution_2();
 
     @Test
     public void divingBoard_1() throws Exception {
