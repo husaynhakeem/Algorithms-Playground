@@ -24,10 +24,9 @@ class Solution_1 {
         final int half = sum / 2;
 
         for (int elementA : setA) {
-            for (int elementB : setB) {
-                if (sumA - elementA + elementB == half) {
-                    return new Pair<>(elementA, elementB);
-                }
+            final int elementB = half + elementA - sumA;
+            if (setB.contains(elementB)) {
+                return new Pair<>(elementA, elementB);
             }
         }
 
