@@ -4,9 +4,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class Solution_1Test {
+public class Solution_2Test {
 
-    private final Solution_1 solution = new Solution_1();
+    private final Solution_2 solution = new Solution_2();
 
     @Test
     public void contiguousSequence_1() throws Exception {
@@ -14,7 +14,7 @@ public class Solution_1Test {
 
         final int result = solution.contiguousSequence(array);
 
-        assertEquals(Integer.MIN_VALUE, result);
+        assertEquals(0, result);
     }
 
     @Test
