@@ -1,6 +1,6 @@
 package cracking_the_coding_interview.chapter_01.exercise_07;
 
-import Utilities.java.MatrixUtils;
+import Utilities.java.GridUtils;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
@@ -22,7 +22,7 @@ public class SolutionTest {
                 {2, 0},
                 {3, 1}
         };
-        assertTrue(MatrixUtils.areMatricesEqual(expectedResult, result));
+        assertTrue(GridUtils.areIntegerGridsEqual(expectedResult, result));
     }
 
     @Test
@@ -42,6 +42,6 @@ public class SolutionTest {
                 {14, 10, 6, 2},
                 {15, 11, 7, 3}
         };
-        assertTrue(MatrixUtils.areMatricesEqual(expectedResult, result));
+        assertTrue(GridUtils.areIntegerGridsEqual(expectedResult, result));
     }
 }

@@ -1,6 +1,6 @@
 package leetcode.problem_0867;
 
-import Utilities.java.MatrixUtils;
+import Utilities.java.GridUtils;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNull;
@@ -24,7 +24,7 @@ public class SolutionTest {
 
         final int[][] result = solution.transpose(A);
 
-        MatrixUtils.areMatricesEqual(new int[][]{}, result);
+        GridUtils.areIntegerGridsEqual(new int[][]{}, result);
     }
 
     @Test
@@ -40,7 +40,7 @@ public class SolutionTest {
                 {2},
                 {3}
         };
-        MatrixUtils.areMatricesEqual(expectedResult, result);
+        GridUtils.areIntegerGridsEqual(expectedResult, result);
     }
 
     @Test
@@ -57,7 +57,7 @@ public class SolutionTest {
                 {2, 5},
                 {3, 6}
         };
-        MatrixUtils.areMatricesEqual(expectedResult, result);
+        GridUtils.areIntegerGridsEqual(expectedResult, result);
     }
 
     @Test
@@ -75,6 +75,6 @@ public class SolutionTest {
                 {2, 5, 8},
                 {3, 6, 9}
         };
-        MatrixUtils.areMatricesEqual(expectedResult, result);
+        GridUtils.areIntegerGridsEqual(expectedResult, result);
     }
 }
