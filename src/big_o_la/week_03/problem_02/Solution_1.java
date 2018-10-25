@@ -38,9 +38,12 @@ class Solution_1 {
     List<Interval> mergeIntervals(final List<Interval> intervals) {
         intervals.sort(Comparator.comparingInt(interval -> interval.lowerBound));
         final List<Interval> result = new ArrayList<>();
-        for (int i = 0; i < intervals.size() - 1; i++) {
-            if (intervals.get(i).overlapsWith(intervals.get(i + 1))) {
+        for (int i = 0; i < intervals.size(); i++) {
+            if (i + 1 < intervals.size() && intervals.get(i).overlapsWith(intervals.get(i + 1))) {
                 result.add(intervals.get(i).mergeWith(intervals.get(i + 1)));
+                i++;
+            } else {
+                result.add(intervals.get(i));
             }
         }
         return result;
