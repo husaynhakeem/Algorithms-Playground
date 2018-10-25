@@ -5,12 +5,8 @@ class Solution_1 {
     int findMaxProfit(final int[] array) {
         final int length = array.length;
 
-        if (length == 0) {
-            return 0;
-        }
-
-        if (length == 1) {
-            return -array[0];
+        if (length <= 1) {
+            return -1;
         }
 
         int profit = 0;
