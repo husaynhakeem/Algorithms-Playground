@@ -5,9 +5,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
-public class SolutionTest {
+public class Solution_1Test {
 
-    private final Solution solution = new Solution();
+    private final Solution_1 solution = new Solution_1();
 
     @Test
     public void rotate_1() throws Exception {

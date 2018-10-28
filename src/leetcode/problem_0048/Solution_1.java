@@ -1,6 +1,6 @@
 package leetcode.problem_0048;
 
-class Solution {
+class Solution_1 {
 
     void rotate(int[][] grid) {
         for (int i = 0; i < grid.length / 2; i++) {
