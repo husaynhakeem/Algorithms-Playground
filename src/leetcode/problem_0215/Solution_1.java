@@ -5,7 +5,7 @@ import java.util.Set;
 
 class Solution_1 {
 
-    public int findKthLargest(int[] array, int k) {
+    int findKthLargest(int[] array, int k) {
         final Set<Integer> indicesToIgnore = new HashSet<>();
         int max = 0;
 
