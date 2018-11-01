@@ -4,9 +4,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class SolutionTest {
+public class Solution_2Test {
 
-    private final Solution solution = new Solution();
+    private final Solution_2 solution = new Solution_2();
 
     @Test
     public void zombieClusters_1() throws Exception {

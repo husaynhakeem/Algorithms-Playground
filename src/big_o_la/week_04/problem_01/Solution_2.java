@@ -1,6 +1,6 @@
 package big_o_la.week_04.problem_01;
 
-class Solution {
+class Solution_2 {
 
     int zombieClusters(final int[][] grid) {
         final int lines = grid.length;
@@ -10,31 +10,29 @@ class Solution {
             return 0;
         }
 
-        final boolean[][] isAlreadyInCluster = new boolean[lines][columns];
         int result = 0;
-
         for (int i = 0; i < lines; i++) {
             for (int j = 0; j < columns; j++) {
-                result += zombieClustersHelper(grid, i, j, isAlreadyInCluster);
+                result += zombieClustersHelper(grid, i, j);
             }
         }
 
         return result;
     }
 
-    private int zombieClustersHelper(final int[][] grid, final int line, final int column, final boolean[][] isAlreadyInCluster) {
+    private int zombieClustersHelper(final int[][] grid, final int line, final int column) {
         if (line >= grid.length || column >= grid[0].length) {
             return 0;
         }
 
-        if (grid[line][column] == 0 || isAlreadyInCluster[line][column]) {
+        if (grid[line][column] == 0) {
             return 0;
         }
 
-        isAlreadyInCluster[line][column] = true;
+        grid[line][column] = 0;
 
-        zombieClustersHelper(grid, line + 1, column, isAlreadyInCluster);
-        zombieClustersHelper(grid, line, column + 1, isAlreadyInCluster);
+        zombieClustersHelper(grid, line + 1, column);
+        zombieClustersHelper(grid, line, column + 1);
 
         return 1;
     }
