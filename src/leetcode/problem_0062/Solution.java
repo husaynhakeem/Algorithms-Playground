@@ -3,7 +3,7 @@ package leetcode.problem_0062;
 import java.util.HashMap;
 import java.util.Map;
 
-class Solution_1 {
+class Solution {
 
     int uniquePaths(int m, int n) {
         final Map<String, Integer> memo = new HashMap<>();
