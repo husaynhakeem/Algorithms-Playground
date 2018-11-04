@@ -1,14 +1,14 @@
 package leetcode.problem_0019;
 
-import leetcode.problem_0019.Solution.Node;
+import leetcode.problem_0019.Solution_1.Node;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
-public class SolutionTest {
+public class Solution_1Test {
 
-    private final Solution solution = new Solution();
+    private final Solution_1 solution = new Solution_1();
 
     @Test
     public void removeNthFromEnd_1() throws Exception {
@@ -72,5 +72,16 @@ public class SolutionTest {
         assertEquals(4, result.next.next.val);
         assertEquals(5, result.next.next.next.val);
         assertNull(result.next.next.next.next);
+    }
+
+    @Test
+    public void removeNthFromEnd_6() throws Exception {
+        final Node head = new Node(1);
+        head.next = new Node(2);
+        final int n = 1;
+
+        final Node result = solution.removeNthFromEnd(head, n);
+
+        assertEquals(1, result.val);
     }
 }

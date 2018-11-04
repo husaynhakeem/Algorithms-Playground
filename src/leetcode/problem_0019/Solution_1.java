@@ -2,7 +2,7 @@ package leetcode.problem_0019;
 
 import org.jetbrains.annotations.NotNull;
 
-class Solution {
+class Solution_1 {
 
     static class Node {
         int val;
@@ -15,21 +15,25 @@ class Solution {
 
     Node removeNthFromEnd(@NotNull Node head, final int n) {
         Node fastRunner = head;
-        Node slowRunner = head;
+        Node slowRunner = null;
         int count = 0;
 
         while (fastRunner != null) {
             fastRunner = fastRunner.next;
-            if (count > n) {
-                slowRunner = slowRunner.next;
+            if (count >= n) {
+                if (slowRunner == null) {
+                    slowRunner = head;
+                } else {
+                    slowRunner = slowRunner.next;
+                }
             } else {
                 count++;
             }
         }
 
-        if (slowRunner == head) {
+        if (slowRunner == null) {
             head = head.next;
-        } else if (slowRunner != null && slowRunner.next != null) {
+        } else if (slowRunner.next != null) {
             slowRunner.next = slowRunner.next.next;
         }
 
