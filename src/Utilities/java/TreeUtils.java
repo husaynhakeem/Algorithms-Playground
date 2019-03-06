@@ -10,6 +10,21 @@ public class TreeUtils {
         public Node(int val) {
             this.val = val;
         }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (!(obj instanceof Node)) {
+                return false;
+            }
+
+            final Node node = (Node) obj;
+
+            final boolean areValuesEqual = val == node.val;
+            final boolean areLeftSubtreesEqual = (left != null && node.left != null && left.equals(node.left)) || (left == null && node.left == null);
+            final boolean areRightSubtreesEqual = (right != null && node.right != null && right.equals(node.right)) || (right == null && node.right == null);
+
+            return areValuesEqual && areLeftSubtreesEqual && areRightSubtreesEqual;
+        }
     }
 
     public static boolean areTreesEqual(Node node1, Node node2) {
