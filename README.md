@@ -6,7 +6,8 @@ These are my solutions to some algorithmic problems taken from the following sou
 - [Leetcode](https://leetcode.com/problemset)
 - [Project Euler](https://projecteuler.net/archives)
 - [MIT course 6006 - Introduction to algirhtms](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/)
+- [Daily coding problem](https://www.dailycodingproblem.com/)
 - [The Los Angeles Big-O meetup](https://www.meetup.com/LA-Big-O/)
 - Other sources ([Misc](https://github.com/husaynhakeem/Algorithms-Playground/tree/master/src/misc) folder)
 
-My goal is to work through them in a variety of programming languages, but for the moment I've mostly used Java (and a bit of Kotlin).
+My goal is to work through them in a variety of programming languages, but for the moment I've mostly used Java (and a tiny bit of Kotlin).
