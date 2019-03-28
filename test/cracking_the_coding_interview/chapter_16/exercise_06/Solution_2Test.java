@@ -37,21 +37,4 @@ public class Solution_2Test {
 
         assertEquals(0, result);
     }
-
-    @Test
-    public void smallestDifference_4() throws Exception {
-        final int length = 1_000_000;
-        final int[] a = new int[length];
-        final int[] b = new int[length];
-        for (int i = 0; i < length; i++) {
-            a[i] = i;
-        }
-        for (int i = length * 2; i < length * 3; i++) {
-            b[i - 2 * length] = i;
-        }
-
-        final int result = solution.smallestDifference(a, b);
-
-        assertEquals(1 + length, result);
-    }
 }
