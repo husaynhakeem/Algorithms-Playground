@@ -6,7 +6,8 @@ public class LinkedListUtils {
         public int data;
         public Node next;
 
-        public Node() {}
+        public Node() {
+        }
 
         public Node(int data) {
             this.data = data;
@@ -28,7 +29,7 @@ public class LinkedListUtils {
 
     public static void printLinkedList(Node root) {
         Node node = root;
-        while(node != null) {
+        while (node != null) {
             System.out.println(node.data);
             node = node.next;
         }
@@ -44,5 +45,18 @@ public class LinkedListUtils {
         }
 
         return node;
+    }
+
+    public static boolean areEqual(final Node node, final Node other) {
+        Node nodeRunner = node;
+        Node otherRunner = other;
+        while (nodeRunner != null && otherRunner != null) {
+            if (nodeRunner.data != otherRunner.data) {
+                return false;
+            }
+            nodeRunner = nodeRunner.next;
+            otherRunner = otherRunner.next;
+        }
+        return nodeRunner == null && otherRunner == null;
     }
 }
