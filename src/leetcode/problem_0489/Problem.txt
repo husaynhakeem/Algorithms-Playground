@@ -1,0 +1,23 @@
+Given a robot cleaner in a room modeled as a grid.
+
+Each cell in the grid can be empty or blocked.
+
+The robot cleaner with 4 given APIs can move forward, turn left or turn right. Each turn it made is 90 degrees.
+
+When it tries to move into a blocked cell, its bumper sensor detects the obstacle and it stays on the current cell.
+
+Design an algorithm to clean the entire room using only the 4 given APIs shown below.
+
+interface Robot {
+  // returns true if next cell is open and robot moves into the cell.
+  // returns false if next cell is obstacle and robot stays on the current cell.
+  boolean move();
+
+  // Robot will stay on the same cell after calling turnLeft/turnRight.
+  // Each turn will be 90 degrees.
+  void turnLeft();
+  void turnRight();
+
+  // Clean the current cell.
+  void clean();
+}
