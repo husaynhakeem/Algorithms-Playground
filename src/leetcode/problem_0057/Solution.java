@@ -39,7 +39,7 @@ public class Solution {
             newIntervals.add(intervals[index++]);
         }
 
-        int start = -1;
+        int start;
         if (!contains(intervals[index], newInterval[0])) {
             start = newInterval[0];
         } else {
