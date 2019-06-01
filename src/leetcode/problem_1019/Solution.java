@@ -1,4 +1,4 @@
-package leetcode.interview_uber_1.problem_1;
+package leetcode.problem_1019;
 
 import Utilities.java.LinkedListUtils.Node;
 
