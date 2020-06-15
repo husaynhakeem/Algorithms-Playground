@@ -15,7 +15,7 @@ public class SolutionTest extends TestCase {
         final List<String> parentheses = solution.generateParenthesis(n);
 
         final List<String> expected = ListUtils.createList("");
-        ListUtils.areEqual(expected, parentheses);
+        assertTrue(ListUtils.areEqual(expected, parentheses));
     }
 
     public void test_2() {
@@ -24,7 +24,7 @@ public class SolutionTest extends TestCase {
         final List<String> parentheses = solution.generateParenthesis(n);
 
         final List<String> expected = ListUtils.createList("()");
-        ListUtils.areEqual(expected, parentheses);
+        assertTrue(ListUtils.areEqual(expected, parentheses));
     }
 
     public void test_3() {
@@ -33,7 +33,7 @@ public class SolutionTest extends TestCase {
         final List<String> parentheses = solution.generateParenthesis(n);
 
         final List<String> expected = ListUtils.createList("(())", "()()");
-        ListUtils.areEqual(expected, parentheses);
+        assertTrue(ListUtils.areEqual(expected, parentheses));
     }
 
     public void test_4() {
@@ -42,7 +42,7 @@ public class SolutionTest extends TestCase {
         final List<String> parentheses = solution.generateParenthesis(n);
 
         final List<String> expected = ListUtils.createList("((()))", "(()())", "(())()", "()(())", "()()()");
-        ListUtils.areEqual(expected, parentheses);
+        assertTrue(ListUtils.areEqual(expected, parentheses));
     }
 
     public void test_5() {
@@ -51,6 +51,6 @@ public class SolutionTest extends TestCase {
         final List<String> parentheses = solution.generateParenthesis(n);
 
         final List<String> expected = ListUtils.createList("(((())))", "((()()))", "((())())", "((()))()", "(()(()))", "(()()())", "(()())()", "(())(())", "(())()()", "()((()))", "()(()())", "()(())()", "()()(())", "()()()()");
-        ListUtils.areEqual(expected, parentheses);
+        assertTrue(ListUtils.areEqual(expected, parentheses));
     }
 }
