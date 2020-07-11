@@ -13,7 +13,7 @@ public class SolutionWithListsTest {
     private final SolutionWithLists solution = new SolutionWithLists();
 
     @Test
-    public void threeSum_1() throws Exception {
+    public void threeSum_1() {
         final int[] array = {};
         final int k = 2;
 
@@ -23,7 +23,7 @@ public class SolutionWithListsTest {
     }
 
     @Test
-    public void threeSum_2() throws Exception {
+    public void threeSum_2() {
         final int[] array = {1, 2};
         final int k = 3;
 
@@ -33,38 +33,44 @@ public class SolutionWithListsTest {
     }
 
     @Test
-    public void threeSum_3() throws Exception {
+    public void threeSum_3() {
         final int[] array = {1, 2, -1};
         final int k = 2;
 
         final List<List<Integer>> result = solution.threeSum(array, k);
 
-        assertEquals(1, result.size());
-        assertTrue(ListUtils.areEqual(ListUtils.createList(-1, 1, 2), result.get(0)));
+        final List<List<Integer>> expected = ListUtils.createList(
+                ListUtils.createList(-1, 1, 2)
+        );
+        assertEquals(expected, result);
     }
 
     @Test
-    public void threeSum_4() throws Exception {
+    public void threeSum_4() {
         final int[] array = {-1, 0, 1, 2, -1, -4};
         final int k = 0;
 
         final List<List<Integer>> result = solution.threeSum(array, k);
 
-        assertEquals(2, result.size());
-        assertTrue(ListUtils.areEqual(ListUtils.createList(-1, -1, 2), result.get(0)));
-        assertTrue(ListUtils.areEqual(ListUtils.createList(-1, 0, 1), result.get(1)));
+        final List<List<Integer>> expected = ListUtils.createList(
+                ListUtils.createList(-1, -1, 2),
+                ListUtils.createList(-1, 0, 1)
+        );
+        assertEquals(expected, result);
     }
 
     @Test
-    public void threeSum_5() throws Exception {
+    public void threeSum_5() {
         final int[] array = {3, 0, -2, -1, 1, 2};
         final int k = 0;
 
         final List<List<Integer>> result = solution.threeSum(array, k);
 
-        assertEquals(3, result.size());
-        assertTrue(ListUtils.areEqual(ListUtils.createList(-2, -1, 3), result.get(0)));
-        assertTrue(ListUtils.areEqual(ListUtils.createList(-2, 0, 2), result.get(1)));
-        assertTrue(ListUtils.areEqual(ListUtils.createList(-1, 0, 1), result.get(2)));
+        final List<List<Integer>> expected = ListUtils.createList(
+                ListUtils.createList(-2, -1, 3),
+                ListUtils.createList(-2, 0, 2),
+                ListUtils.createList(-1, 0, 1)
+        );
+        assertEquals(expected, result);
     }
 }

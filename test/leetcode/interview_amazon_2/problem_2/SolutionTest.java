@@ -7,14 +7,13 @@ import org.junit.Test;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 public class SolutionTest {
 
     private final Solution solution = new Solution();
 
     @Test
-    public void zigzagLevelOrder() throws Exception {
+    public void zigzagLevelOrder() {
         final Node root = new Node(3);
         root.left = new Node(9);
         root.right = new Node(20);
@@ -23,9 +22,11 @@ public class SolutionTest {
 
         final List<List<Integer>> result = solution.zigzagLevelOrder(root);
 
-        assertEquals(3, result.size());
-        assertTrue(ListUtils.areEqual(ListUtils.createList(3), result.get(0)));
-        assertTrue(ListUtils.areEqual(ListUtils.createList(20, 9), result.get(1)));
-        assertTrue(ListUtils.areEqual(ListUtils.createList(15, 7), result.get(2)));
+        final List<List<Integer>> expected = ListUtils.createList(
+                ListUtils.createList(3),
+                ListUtils.createList(20, 9),
+                ListUtils.createList(15, 7)
+        );
+        assertEquals(expected, result);
     }
 }

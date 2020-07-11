@@ -6,14 +6,13 @@ import org.junit.Test;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 public class Solution_2Test {
 
     private final Solution_2 solution = new Solution_2();
 
     @Test
-    public void powerSet_1() throws Exception {
+    public void powerSet_1() {
         final List<Integer> list = ListUtils.createList();
 
         final List<List<Integer>> result = solution.powerSet(list);
@@ -21,14 +20,11 @@ public class Solution_2Test {
         final List<List<Integer>> expectedResult = ListUtils.createList(
                 ListUtils.createList()
         );
-        assertEquals(1, result.size());
-        for (int i = 0; i < result.size(); i++) {
-            assertTrue(ListUtils.areEqual(expectedResult.get(i), result.get(i)));
-        }
+        assertEquals(expectedResult, result);
     }
 
     @Test
-    public void powerSet_2() throws Exception {
+    public void powerSet_2() {
         final List<Integer> list = ListUtils.createList(1);
 
         final List<List<Integer>> result = solution.powerSet(list);
@@ -37,14 +33,11 @@ public class Solution_2Test {
                 ListUtils.createList(),
                 ListUtils.createList(1)
         );
-        assertEquals(2, result.size());
-        for (int i = 0; i < result.size(); i++) {
-            assertTrue(ListUtils.areEqual(expectedResult.get(i), result.get(i)));
-        }
+        assertEquals(expectedResult, result);
     }
 
     @Test
-    public void powerSet_3() throws Exception {
+    public void powerSet_3() {
         final List<Integer> list = ListUtils.createList(1, 2);
 
         final List<List<Integer>> result = solution.powerSet(list);
@@ -55,14 +48,11 @@ public class Solution_2Test {
                 ListUtils.createList(2),
                 ListUtils.createList(1, 2)
         );
-        assertEquals(4, result.size());
-        for (int i = 0; i < result.size(); i++) {
-            assertTrue(ListUtils.areEqual(expectedResult.get(i), result.get(i)));
-        }
+        assertEquals(expectedResult, result);
     }
 
     @Test
-    public void powerSet_4() throws Exception {
+    public void powerSet_4() {
         final List<Integer> list = ListUtils.createList(1, 2, 3);
 
         final List<List<Integer>> result = solution.powerSet(list);
@@ -77,9 +67,6 @@ public class Solution_2Test {
                 ListUtils.createList(2, 3),
                 ListUtils.createList(1, 2, 3)
         );
-        assertEquals(8, result.size());
-        for (int i = 0; i < result.size(); i++) {
-            assertTrue(ListUtils.areEqual(expectedResult.get(i), result.get(i)));
-        }
+        assertEquals(expectedResult, result);
     }
 }

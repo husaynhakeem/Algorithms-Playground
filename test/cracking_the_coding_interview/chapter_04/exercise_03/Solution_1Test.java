@@ -5,9 +5,8 @@ import org.junit.Test;
 
 import java.util.List;
 
-import static Utilities.java.ListUtils.areEqual;
 import static Utilities.java.ListUtils.createList;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 public class Solution_1Test {
 
@@ -31,8 +30,8 @@ public class Solution_1Test {
 
         final List<List<Node>> result = solution.listOfDepths(node1);
 
-        assertTrue(areEqual(createList(node1), result.get(0)));
-        assertTrue(areEqual(createList(node2, node3), result.get(1)));
-        assertTrue(areEqual(createList(node4, node5, node6, node7), result.get(2)));
+        assertEquals(createList(node1), result.get(0));
+        assertEquals(createList(node2, node3), result.get(1));
+        assertEquals(createList(node4, node5, node6, node7), result.get(2));
     }
 }

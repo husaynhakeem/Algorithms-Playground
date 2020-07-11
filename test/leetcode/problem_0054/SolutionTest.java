@@ -19,7 +19,7 @@ public class SolutionTest extends TestCase {
         final List<Integer> result = solution.spiralOrder(grid);
 
         final List<Integer> expected = ListUtils.createList(1, 2, 3, 6, 9, 8, 7, 4, 5);
-        assertTrue(ListUtils.areEqual(result, expected));
+        assertEquals(result, expected);
     }
 
     public void test_2() {
@@ -32,7 +32,7 @@ public class SolutionTest extends TestCase {
         final List<Integer> result = solution.spiralOrder(grid);
 
         final List<Integer> expected = ListUtils.createList(1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7);
-        assertTrue(ListUtils.areEqual(result, expected));
+        assertEquals(result, expected);
     }
 
     public void test_3() {
@@ -41,7 +41,7 @@ public class SolutionTest extends TestCase {
         final List<Integer> result = solution.spiralOrder(grid);
 
         final List<Integer> expected = ListUtils.createList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-        assertTrue(ListUtils.areEqual(result, expected));
+        assertEquals(result, expected);
     }
 
     public void test_4() {
@@ -53,6 +53,6 @@ public class SolutionTest extends TestCase {
         final List<Integer> result = solution.spiralOrder(grid);
 
         final List<Integer> expected = ListUtils.createList(1, 2, 4, 3);
-        assertTrue(ListUtils.areEqual(result, expected));
+        assertEquals(result, expected);
     }
 }
