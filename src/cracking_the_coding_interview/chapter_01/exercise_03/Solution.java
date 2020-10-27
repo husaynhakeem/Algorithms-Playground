@@ -2,28 +2,23 @@ package cracking_the_coding_interview.chapter_01.exercise_03;
 
 class Solution {
 
-    void urlify(final char[] chars) {
-        final int length = chars.length;
-        int index = length - 1;
-        int runner = length - 1;
-
-        while (runner >= 0) {
-            while (runner >= 0 && chars[runner] == ' ') {
-                runner--;
+    void urlify(final char[] chars, int trueLength) {
+        int numberOfSpaces = 0;
+        for (int i = 0; i < trueLength; i++) {
+            if (chars[i] == ' ') {
+                numberOfSpaces++;
             }
+        }
 
-            if (runner < 0) {
-                return;
-            }
-
-            if (runner != index) {
-                chars[index--] = '0';
-                chars[index--] = '2';
-                chars[index--] = '%';
-            }
-
-            while (runner >= 0 && chars[runner] != ' ') {
-                chars[index--] = chars[runner--];
+        int right = trueLength - 1 + 2 * numberOfSpaces;
+        for (int i = trueLength - 1; i >= 0; i--) {
+            if (chars[i] == ' ') {
+                chars[right] = '0';
+                chars[right - 1] = '2';
+                chars[right - 2] = '%';
+                right -= 3;
+            } else {
+                chars[right--] = chars[i];
             }
         }
     }
