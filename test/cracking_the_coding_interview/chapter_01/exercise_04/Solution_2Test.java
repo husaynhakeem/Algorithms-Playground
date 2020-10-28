@@ -2,12 +2,11 @@ package cracking_the_coding_interview.chapter_01.exercise_04;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
-public class SolutionTest {
+public class Solution_2Test {
 
-    private final Solution solution = new Solution();
+    final Solution_2 solution = new Solution_2();
 
     @Test
     public void isPermutationOfPalindrome_1() {
