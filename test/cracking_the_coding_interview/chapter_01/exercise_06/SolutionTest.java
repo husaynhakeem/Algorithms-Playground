@@ -9,7 +9,7 @@ public class SolutionTest {
     private final Solution solution = new Solution();
 
     @Test
-    public void compressString_1() throws Exception {
+    public void compressString_1() {
         final String s = "aabcccccaaa";
 
         final String result = solution.compressString(s);
@@ -18,7 +18,7 @@ public class SolutionTest {
     }
 
     @Test
-    public void compressString_2() throws Exception {
+    public void compressString_2() {
         final String s = "aaaaaaaaaaaabcccccaaa";
 
         final String result = solution.compressString(s);
@@ -27,7 +27,7 @@ public class SolutionTest {
     }
 
     @Test
-    public void compressString_3() throws Exception {
+    public void compressString_3() {
         final String s = "abcdefg";
 
         final String result = solution.compressString(s);

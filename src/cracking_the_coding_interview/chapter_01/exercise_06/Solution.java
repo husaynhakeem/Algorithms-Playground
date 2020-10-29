@@ -20,12 +20,13 @@ class Solution {
                 count++;
             }
 
+            if (sb.length() >= s.length()) {
+                return s;
+            }
+
             sb.append(count);
         }
 
-        if (sb.length() >= s.length()) {
-            return s;
-        }
         return sb.toString();
     }
 }
