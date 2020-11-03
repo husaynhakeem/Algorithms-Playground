@@ -10,7 +10,7 @@ public class SolutionFollowUpTest {
     private final SolutionFollowUp solution = new SolutionFollowUp();
 
     @Test
-    public void removeDuplicates_1() throws Exception {
+    public void removeDuplicates_1() {
         final SolutionFollowUp.Node head = new SolutionFollowUp.Node(2);
         head.next = new SolutionFollowUp.Node(1);
         head.next.next = new SolutionFollowUp.Node(5);
@@ -28,7 +28,7 @@ public class SolutionFollowUpTest {
     }
 
     @Test
-    public void removeDuplicates_2() throws Exception {
+    public void removeDuplicates_2() {
         final SolutionFollowUp.Node head = new SolutionFollowUp.Node(1);
         head.next = new SolutionFollowUp.Node(1);
         head.next.next = new SolutionFollowUp.Node(1);
