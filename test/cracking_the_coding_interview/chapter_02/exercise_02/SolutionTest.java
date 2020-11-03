@@ -10,7 +10,7 @@ public class SolutionTest {
     private final Solution solution = new Solution();
 
     @Test
-    public void findKthToLast_1() throws Exception {
+    public void findKthToLast_1() {
         final Solution.Node head = new Solution.Node(2);
         head.next = new Solution.Node(1);
         head.next.next = new Solution.Node(5);
@@ -23,7 +23,7 @@ public class SolutionTest {
     }
 
     @Test
-    public void findKthToLast_2() throws Exception {
+    public void findKthToLast_2() {
         final Solution.Node head = new Solution.Node(2);
         head.next = new Solution.Node(1);
         head.next.next = new Solution.Node(5);
@@ -36,7 +36,7 @@ public class SolutionTest {
     }
 
     @Test
-    public void findKthToLast_3() throws Exception {
+    public void findKthToLast_3() {
         final Solution.Node head = new Solution.Node(2);
         head.next = new Solution.Node(1);
         head.next.next = new Solution.Node(5);
@@ -49,7 +49,7 @@ public class SolutionTest {
     }
 
     @Test
-    public void findKthToLast_4() throws Exception {
+    public void findKthToLast_4() {
         final Solution.Node head = new Solution.Node(2);
         head.next = new Solution.Node(1);
         head.next.next = new Solution.Node(5);
