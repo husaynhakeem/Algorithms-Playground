@@ -1,22 +1,23 @@
 package cracking_the_coding_interview.chapter_02.exercise_01;
 
+import cracking_the_coding_interview.chapter_02.exercise_01.Solution_2.Node;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
-public class SolutionTest {
+public class Solution_2Test {
 
-    private final Solution solution = new Solution();
+    private final Solution_2 solution = new Solution_2();
 
     @Test
     public void removeDuplicates_1() {
-        final Solution.Node head = new Solution.Node(2);
-        head.next = new Solution.Node(1);
-        head.next.next = new Solution.Node(5);
-        head.next.next.next = new Solution.Node(1);
-        head.next.next.next.next = new Solution.Node(7);
-        head.next.next.next.next.next = new Solution.Node(2);
+        final Node head = new Node(2);
+        head.next = new Node(1);
+        head.next.next = new Node(5);
+        head.next.next.next = new Node(1);
+        head.next.next.next.next = new Node(7);
+        head.next.next.next.next.next = new Node(2);
 
         solution.removeDuplicates(head);
 
@@ -29,11 +30,11 @@ public class SolutionTest {
 
     @Test
     public void removeDuplicates_2() {
-        final Solution.Node head = new Solution.Node(1);
-        head.next = new Solution.Node(1);
-        head.next.next = new Solution.Node(1);
-        head.next.next.next = new Solution.Node(1);
-        head.next.next.next.next = new Solution.Node(1);
+        final Node head = new Node(1);
+        head.next = new Node(1);
+        head.next.next = new Node(1);
+        head.next.next.next = new Node(1);
+        head.next.next.next.next = new Node(1);
 
         solution.removeDuplicates(head);
 
