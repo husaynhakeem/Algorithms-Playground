@@ -13,8 +13,15 @@ class Solution {
         }
     }
 
-    void deleteMiddleNode(@NotNull Node node) {
-        node.val = node.next.val;
+    boolean deleteMiddleNode(@NotNull Node node) {
+        // Cannot delete the last node of a linked list
+        if (node.next == null) {
+            return false;
+        }
+
+        final Node next = node.next;
+        node.val = next.val;
         node.next = node.next.next;
+        return true;
     }
 }
