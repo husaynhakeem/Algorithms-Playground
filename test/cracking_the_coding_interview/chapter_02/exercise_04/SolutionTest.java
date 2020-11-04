@@ -9,7 +9,7 @@ public class SolutionTest {
     private final Solution solution = new Solution();
 
     @Test
-    public void partition_1() throws Exception {
+    public void partition_1() {
         final int partition = 5;
         final Solution.Node head = new Solution.Node(3);
         head.next = new Solution.Node(5);
@@ -31,7 +31,7 @@ public class SolutionTest {
     }
 
     @Test
-    public void partition_2() throws Exception {
+    public void partition_2() {
         final int partition = 8;
         final Solution.Node head = new Solution.Node(3);
         head.next = new Solution.Node(5);
@@ -53,7 +53,7 @@ public class SolutionTest {
     }
 
     @Test
-    public void partition_3() throws Exception {
+    public void partition_3() {
         final int partition = 11;
         final Solution.Node head = new Solution.Node(3);
         head.next = new Solution.Node(5);
@@ -75,7 +75,7 @@ public class SolutionTest {
     }
 
     @Test
-    public void partition_4() throws Exception {
+    public void partition_4() {
         final int partition = 0;
         final Solution.Node head = new Solution.Node(3);
         head.next = new Solution.Node(5);
