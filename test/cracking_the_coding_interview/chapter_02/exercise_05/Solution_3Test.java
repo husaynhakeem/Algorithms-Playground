@@ -9,7 +9,7 @@ public class Solution_3Test {
     private final Solution_3 solution = new Solution_3();
 
     @Test
-    public void sumLists_1() throws Exception {
+    public void sumLists_1() {
         final Solution_3.Node l1 = new Solution_3.Node(1);
         l1.next = new Solution_3.Node(2);
 
@@ -27,7 +27,7 @@ public class Solution_3Test {
     }
 
     @Test
-    public void sumLists_2() throws Exception {
+    public void sumLists_2() {
         final Solution_3.Node l1 = new Solution_3.Node(7);
         l1.next = new Solution_3.Node(1);
         l1.next.next = new Solution_3.Node(6);
