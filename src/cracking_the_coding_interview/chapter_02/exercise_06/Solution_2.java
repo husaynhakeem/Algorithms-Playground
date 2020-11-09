@@ -1,5 +1,7 @@
 package cracking_the_coding_interview.chapter_02.exercise_06;
 
+import java.util.Stack;
+
 class Solution_2 {
 
     static class Node {
@@ -11,31 +13,24 @@ class Solution_2 {
         }
     }
 
-    boolean isPalindrome(Node node) {
-        Node reversedNode = reverseLinkedList(node);
-        return compareLinkedLists(node, reversedNode);
-    }
+    boolean isPalindrome(Node node, int size) {
+        Stack<Integer> stack = new Stack<>();
+        boolean isSizeEven = size % 2 == 0;
 
-    private Node reverseLinkedList(Node node) {
-        Node reversedNode = null;
-
-        while (node != null) {
-            Node temp = new Node(node.val);
-            temp.next = reversedNode;
-            reversedNode = temp;
+        for (int i = 0; i < size / 2; i++) {
+            stack.push(node.val);
             node = node.next;
         }
 
-        return reversedNode;
-    }
+        if (!isSizeEven)
+            node = node.next;
 
-    private boolean compareLinkedLists(Node first, Node second) {
-        while (first != null && second != null) {
-            if (first.val != second.val)
+        while (node != null) {
+            if (stack.pop() != node.val)
                 return false;
-            first = first.next;
-            second = second.next;
+            node = node.next;
         }
-        return first == null && second == null;
+
+        return true;
     }
 }

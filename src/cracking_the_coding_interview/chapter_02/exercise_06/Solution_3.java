@@ -13,22 +13,25 @@ class Solution_3 {
         }
     }
 
-    boolean isPalindrome(Node node, int size) {
+    boolean isPalindrome(Node node) {
         Stack<Integer> stack = new Stack<>();
-        boolean isSizeEven = size % 2 == 0;
 
-        for (int i = 0; i < size / 2; i++) {
-            stack.push(node.val);
-            node = node.next;
+        Node fast = node;
+        Node slow = node;
+
+        while (fast != null && fast.next != null) {
+            stack.push(slow.val);
+            slow = slow.next;
+            fast = fast.next.next;
         }
 
-        if (!isSizeEven)
-            node = node.next;
+        if (fast != null)
+            slow = slow.next;
 
-        while (node != null) {
-            if (stack.pop() != node.val)
+        while (slow != null) {
+            if (stack.pop() != slow.val)
                 return false;
-            node = node.next;
+            slow = slow.next;
         }
 
         return true;

@@ -1,8 +1,11 @@
 package cracking_the_coding_interview.chapter_02.exercise_06;
 
-import java.util.Stack;
+import org.jetbrains.annotations.NotNull;
 
-class Solution_4 {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Solution_4 {
 
     static class Node {
         int val;
@@ -13,27 +16,23 @@ class Solution_4 {
         }
     }
 
-    boolean isPalindrome(Node node) {
-        Stack<Integer> stack = new Stack<>();
+    boolean isPalindrome(@NotNull final Node node) {
+        final List<Integer> values = new ArrayList<>();
 
-        Node fast = node;
-        Node slow = node;
-
-        while (fast != null && fast.next != null) {
-            stack.push(slow.val);
-            slow = slow.next;
-            fast = fast.next.next;
+        Node runner = node;
+        while (runner != null) {
+            values.add(runner.val);
+            runner = runner.next;
         }
 
-        if (fast != null)
-            slow = slow.next;
-
-        while (slow != null) {
-            if (stack.pop() != slow.val)
+        int left = 0, right = values.size() - 1;
+        while (left < right) {
+            if (!values.get(left++).equals(values.get(right--))) {
                 return false;
-            slow = slow.next;
+            }
         }
 
         return true;
     }
+
 }
