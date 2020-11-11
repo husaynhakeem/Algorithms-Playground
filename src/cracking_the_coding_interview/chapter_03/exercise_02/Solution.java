@@ -4,7 +4,7 @@ import java.util.Stack;
 
 class Solution extends Stack<Integer> {
 
-    private Stack<Integer> minStack = new Stack<>();
+    private final Stack<Integer> minStack = new Stack<>();
 
     @Override
     public Integer push(Integer item) {
