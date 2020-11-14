@@ -9,9 +9,9 @@ class Solution_1 {
     Stack<Integer> sortStack(@NotNull final Stack<Integer> stack) {
         Stack<Integer> helper = new Stack<>();
 
-        do {
+        while (!stack.isEmpty()) {
             int top = stack.pop();
-            if (helper.isEmpty() || helper.peek() >= top) {
+            if (helper.isEmpty() || helper.peek() <= top) {
                 helper.push(top);
             } else if (!helper.isEmpty()) {
                 int counter = 0;
@@ -19,7 +19,7 @@ class Solution_1 {
                 do {
                     stack.push(helper.pop());
                     counter++;
-                } while (!helper.isEmpty() && helper.peek() < top);
+                } while (!helper.isEmpty() && helper.peek() > top);
 
                 helper.push(top);
 
@@ -27,7 +27,7 @@ class Solution_1 {
                     helper.push(stack.pop());
                 }
             }
-        } while (!stack.isEmpty());
+        }
 
         return helper;
     }

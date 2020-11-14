@@ -10,7 +10,7 @@ class Solution_2 {
         final Stack<Integer> tempStack = new Stack<>();
         while (!stack.isEmpty()) {
             final int top = stack.pop();
-            while (!tempStack.isEmpty() && tempStack.peek() < top) {
+            while (!tempStack.isEmpty() && tempStack.peek() > top) {
                 stack.push(tempStack.pop());
             }
             tempStack.push(top);
