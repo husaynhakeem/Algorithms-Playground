@@ -4,6 +4,7 @@ import Utilities.java.TreeUtils.Node;
 import org.junit.Test;
 
 import static Utilities.java.TreeUtils.areTreesEqual;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 public class SolutionTest {
@@ -11,7 +12,26 @@ public class SolutionTest {
     private final Solution solution = new Solution();
 
     @Test
-    public void minimalTree() throws Exception {
+    public void minimalTree_1() {
+        final int[] array = {};
+
+        final Node result = solution.minimalTree(array);
+
+        assertNull(result);
+    }
+
+    @Test
+    public void minimalTree_2() {
+        final int[] array = {1};
+
+        final Node result = solution.minimalTree(array);
+
+        final Node expectedResult = new Node(1);
+        assertTrue(areTreesEqual(expectedResult, result));
+    }
+
+    @Test
+    public void minimalTree_3() {
         final int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
         final Node result = solution.minimalTree(array);
