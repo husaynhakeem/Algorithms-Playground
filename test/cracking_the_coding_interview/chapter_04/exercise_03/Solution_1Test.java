@@ -13,7 +13,7 @@ public class Solution_1Test {
     private final Solution_1 solution = new Solution_1();
 
     @Test
-    public void listOfDepths() throws Exception {
+    public void listOfDepths() {
         final Node node1 = new Node(1);
         Node node2 = new Node(2);
         node1.left = node2;

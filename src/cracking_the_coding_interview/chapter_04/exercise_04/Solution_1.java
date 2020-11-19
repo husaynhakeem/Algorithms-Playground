@@ -8,14 +8,14 @@ class Solution_1 {
         if (node == null) {
             return true;
         }
-        boolean currentLevelIsBalanced = Math.abs(numberOfNodesFrom(node.left) - numberOfNodesFrom(node.right)) <= 1;
+        boolean currentLevelIsBalanced = Math.abs(heightFrom(node.left) - heightFrom(node.right)) <= 1;
         return currentLevelIsBalanced && checkBalanced(node.left) && checkBalanced(node.right);
     }
 
-    private int numberOfNodesFrom(final Node node) {
+    private int heightFrom(final Node node) {
         if (node == null) {
             return 0;
         }
-        return 1 + numberOfNodesFrom(node.left) + numberOfNodesFrom(node.right);
+        return 1 + Math.max(heightFrom(node.left), heightFrom(node.right));
     }
 }

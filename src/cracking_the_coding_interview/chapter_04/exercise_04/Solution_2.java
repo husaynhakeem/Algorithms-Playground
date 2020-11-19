@@ -5,20 +5,20 @@ import Utilities.java.TreeUtils.Node;
 class Solution_2 {
 
     boolean checkBalanced(Node node) {
-        return numberOfNodesFrom(node) != Integer.MIN_VALUE;
+        return heightFrom(node) != Integer.MIN_VALUE;
     }
 
-    private int numberOfNodesFrom(Node node) {
+    private int heightFrom(Node node) {
         if (node == null) {
             return 0;
         }
 
-        final int leftHeight = numberOfNodesFrom(node.left);
+        final int leftHeight = heightFrom(node.left);
         if (leftHeight == Integer.MIN_VALUE) {
             return Integer.MIN_VALUE;
         }
 
-        final int rightHeight = numberOfNodesFrom(node.right);
+        final int rightHeight = heightFrom(node.right);
         if (rightHeight == Integer.MIN_VALUE) {
             return Integer.MIN_VALUE;
         }
@@ -27,6 +27,6 @@ class Solution_2 {
             return Integer.MIN_VALUE;
         }
 
-        return 1 + leftHeight + rightHeight;
+        return 1 + Math.max(leftHeight, rightHeight);
     }
 }
