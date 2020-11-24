@@ -6,9 +6,9 @@ import org.junit.Test;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class Solution_2Test {
+public class Solution_3Test {
 
-    private final Solution_2 solution = new Solution_2();
+    private final Solution_3 solution = new Solution_3();
 
     @Test
     public void isValidBST_1() {
@@ -31,7 +31,7 @@ public class Solution_2Test {
         five.left = two;
         five.right = seven;
 
-        final boolean result = solution.isValidBST(five, 9);
+        final boolean result = solution.isValidBST(five);
         assertTrue(result);
     }
 
@@ -56,7 +56,7 @@ public class Solution_2Test {
         five.left = two;
         five.right = seven;
 
-        final boolean result = solution.isValidBST(five, 9);
+        final boolean result = solution.isValidBST(five);
         assertFalse(result);
     }
 }

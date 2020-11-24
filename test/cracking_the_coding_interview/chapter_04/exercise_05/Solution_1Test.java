@@ -11,7 +11,7 @@ public class Solution_1Test {
     private final Solution_1 solution = new Solution_1();
 
     @Test
-    public void isValidBST_1() throws Exception {
+    public void isValidBST_1() {
         Node one = new Node(1);
         Node two = new Node(2);
         Node three = new Node(3);
@@ -32,12 +32,11 @@ public class Solution_1Test {
         five.right = seven;
 
         final boolean result = solution.isValidBST(five);
-
         assertTrue(result);
     }
 
     @Test
-    public void isValidBST_2() throws Exception {
+    public void isValidBST_2() {
         Node one = new Node(1);
         Node two = new Node(2);
         Node three = new Node(3);
@@ -49,20 +48,15 @@ public class Solution_1Test {
         Node nine = new Node(9);
 
         three.right = four;
-
         eight.left = nine;
-
         two.left = one;
         two.right = three;
-
         seven.left = six;
         seven.right = eight;
-
         five.left = two;
         five.right = seven;
 
         final boolean result = solution.isValidBST(five);
-
         assertFalse(result);
     }
 }
