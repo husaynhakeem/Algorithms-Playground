@@ -8,7 +8,7 @@ class Solution_2 {
 
     static class Graph {
         Set<Project> projects = new HashSet<>();
-        private Map<Character, Project> map = new HashMap<>();
+        private final Map<Character, Project> map = new HashMap<>();
 
         void addProject(final Character projectName) {
             final Project project = new Project(projectName);
@@ -23,11 +23,16 @@ class Solution_2 {
 
     static class Project {
         char value;
+        State state = State.BLANK;
         List<Project> dependants = new ArrayList<>();
 
-        public Project(final Character value) {
+        public Project(final char value) {
             this.value = value;
         }
+    }
+
+    private enum State {
+        BLANK, PARTIAL, COMPLETE
     }
 
     private Graph buildGraph(final List<Character> projects, final List<Pair<Character, Character>> dependencies) {
@@ -49,8 +54,8 @@ class Solution_2 {
 
         final Graph graph = buildGraph(projects, dependencies);
         for (Project project : graph.projects) {
-            if (!result.contains(project.value)) {
-                buildOrder(project, result);
+            if (!buildOrder(project, result)) {
+                return null;
             }
         }
 
@@ -58,12 +63,23 @@ class Solution_2 {
         return result;
     }
 
-    private void buildOrder(final Project project, final List<Character> result) {
-        for (Project dependant : project.dependants) {
-            if (!result.contains(dependant.value)) {
-                buildOrder(dependant, result);
-            }
+    private boolean buildOrder(final Project project, final List<Character> result) {
+        switch (project.state) {
+            case COMPLETE:
+                return true;
+            case PARTIAL:
+                return false;
+            case BLANK:
+            default:
+                project.state = State.PARTIAL;
+                for (Project dependant : project.dependants) {
+                    if (!buildOrder(dependant, result)) {
+                        return false;
+                    }
+                }
+                project.state = State.COMPLETE;
+                result.add(project.value);
+                return true;
         }
-        result.add(project.value);
     }
 }
