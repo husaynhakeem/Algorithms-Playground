@@ -21,7 +21,7 @@ class Solution_1 {
     Node findSuccessor(@NotNull final Node node) {
         final List<Node> nodes = BuildNodesListFromRoot(node);
         final int index = nodes.indexOf(node);
-        if (index >= 0 && index < nodes.size() - 1) {
+        if (index < nodes.size() - 1) {
             return nodes.get(index + 1);
         }
         return null;
@@ -38,9 +38,9 @@ class Solution_1 {
         return node;
     }
 
-    private List<Node> buildNodesList(@NotNull final Node node) {
+    private List<Node> buildNodesList(@NotNull final Node root) {
         final List<Node> nodes = new ArrayList<>();
-        buildNodesList(nodes, node);
+        buildNodesList(nodes, root);
         return nodes;
     }
 

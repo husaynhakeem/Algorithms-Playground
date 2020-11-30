@@ -11,154 +11,154 @@ public class Solution_1Test {
     private final Solution_1 solution = new Solution_1();
 
     @Test
-    public void findSuccessor_1() throws Exception {
-        Node node1 = new Node(1);
-        Node node2 = new Node(2);
-        Node node3 = new Node(3);
+    public void findSuccessor_1() {
+        Node one = new Node(1);
+        Node two = new Node(2);
+        Node three = new Node(3);
 
-        node1.parent = node2;
-        node3.parent = node2;
-        node2.left = node1;
-        node2.right = node3;
+        one.parent = two;
+        three.parent = two;
+        two.left = one;
+        two.right = three;
 
-        final Node result = solution.findSuccessor(node1);
+        final Node result = solution.findSuccessor(one);
 
-        assertEquals(node2, result);
+        assertEquals(two, result);
     }
 
     @Test
-    public void findSuccessor_2() throws Exception {
-        Node node1 = new Node(1);
-        Node node2 = new Node(2);
-        Node node3 = new Node(3);
+    public void findSuccessor_2() {
+        Node one = new Node(1);
+        Node two = new Node(2);
+        Node three = new Node(3);
 
-        node1.parent = node2;
-        node3.parent = node2;
-        node2.left = node1;
-        node2.right = node3;
+        one.parent = two;
+        three.parent = two;
+        two.left = one;
+        two.right = three;
 
-        final Node result = solution.findSuccessor(node2);
+        final Node result = solution.findSuccessor(two);
 
-        assertEquals(node3, result);
+        assertEquals(three, result);
     }
 
     @Test
-    public void findSuccessor_3() throws Exception {
-        Node node1 = new Node(1);
-        Node node2 = new Node(2);
-        Node node3 = new Node(3);
+    public void findSuccessor_3() {
+        Node one = new Node(1);
+        Node two = new Node(2);
+        Node three = new Node(3);
 
-        node1.parent = node2;
-        node3.parent = node2;
-        node2.left = node1;
-        node2.right = node3;
+        one.parent = two;
+        three.parent = two;
+        two.left = one;
+        two.right = three;
 
-        final Node result = solution.findSuccessor(node3);
+        final Node result = solution.findSuccessor(three);
 
         assertNull(result);
     }
 
     @Test
-    public void findSuccessor_4() throws Exception {
-        Node node1 = new Node(1);
-        Node node2 = new Node(2);
-        Node node3 = new Node(3);
-        Node node4 = new Node(4);
-        Node node5 = new Node(5);
-        Node node6 = new Node(6);
+    public void findSuccessor_4() {
+        Node one = new Node(1);
+        Node two = new Node(2);
+        Node three = new Node(3);
+        Node four = new Node(4);
+        Node five = new Node(5);
+        Node six = new Node(6);
 
-        node1.parent = node3;
-        node2.parent = node3;
-        node3.parent = node4;
-        node6.parent = node5;
-        node5.parent = node4;
+        one.parent = three;
+        two.parent = three;
+        three.parent = four;
+        six.parent = five;
+        five.parent = four;
 
-        node4.left = node3;
-        node4.right = node5;
-        node3.left = node1;
-        node3.right = node2;
-        node5.left = node6;
+        four.left = three;
+        four.right = five;
+        three.left = one;
+        three.right = two;
+        five.left = six;
 
-        final Node result = solution.findSuccessor(node2);
+        final Node result = solution.findSuccessor(two);
 
-        assertEquals(node4, result);
+        assertEquals(four, result);
     }
 
     @Test
-    public void findSuccessor_5() throws Exception {
-        Node node1 = new Node(1);
-        Node node2 = new Node(2);
-        Node node3 = new Node(3);
-        Node node4 = new Node(4);
-        Node node5 = new Node(5);
-        Node node6 = new Node(6);
+    public void findSuccessor_5() {
+        Node one = new Node(1);
+        Node two = new Node(2);
+        Node three = new Node(3);
+        Node four = new Node(4);
+        Node five = new Node(5);
+        Node six = new Node(6);
 
-        node1.parent = node3;
-        node2.parent = node3;
-        node3.parent = node4;
-        node6.parent = node5;
-        node5.parent = node4;
+        one.parent = three;
+        two.parent = three;
+        three.parent = four;
+        six.parent = five;
+        five.parent = four;
 
-        node4.left = node3;
-        node4.right = node5;
-        node3.left = node1;
-        node3.right = node2;
-        node5.left = node6;
+        four.left = three;
+        four.right = five;
+        three.left = one;
+        three.right = two;
+        five.left = six;
 
-        final Node result = solution.findSuccessor(node6);
+        final Node result = solution.findSuccessor(six);
 
-        assertEquals(node5, result);
+        assertEquals(five, result);
     }
 
     @Test
-    public void findSuccessor_6() throws Exception {
-        Node node1 = new Node(1);
-        Node node2 = new Node(2);
-        Node node3 = new Node(3);
-        Node node4 = new Node(4);
-        Node node5 = new Node(5);
-        Node node6 = new Node(6);
+    public void findSuccessor_6() {
+        Node one = new Node(1);
+        Node two = new Node(2);
+        Node three = new Node(3);
+        Node four = new Node(4);
+        Node five = new Node(5);
+        Node six = new Node(6);
 
-        node1.parent = node3;
-        node2.parent = node3;
-        node3.parent = node4;
-        node6.parent = node5;
-        node5.parent = node4;
+        one.parent = three;
+        two.parent = three;
+        three.parent = four;
+        six.parent = five;
+        five.parent = four;
 
-        node4.left = node3;
-        node4.right = node5;
-        node3.left = node1;
-        node3.right = node2;
-        node5.left = node6;
+        four.left = three;
+        four.right = five;
+        three.left = one;
+        three.right = two;
+        five.left = six;
 
-        final Node result = solution.findSuccessor(node5);
+        final Node result = solution.findSuccessor(five);
 
         assertNull(result);
     }
 
     @Test
-    public void findSuccessor_7() throws Exception {
-        Node node1 = new Node(1);
-        Node node2 = new Node(2);
-        Node node3 = new Node(3);
-        Node node4 = new Node(4);
-        Node node5 = new Node(5);
-        Node node6 = new Node(6);
+    public void findSuccessor_7() {
+        Node one = new Node(1);
+        Node two = new Node(2);
+        Node three = new Node(3);
+        Node four = new Node(4);
+        Node five = new Node(5);
+        Node six = new Node(6);
 
-        node1.parent = node3;
-        node2.parent = node3;
-        node3.parent = node4;
-        node6.parent = node5;
-        node5.parent = node4;
+        one.parent = three;
+        two.parent = three;
+        three.parent = four;
+        six.parent = five;
+        five.parent = four;
 
-        node4.left = node3;
-        node4.right = node5;
-        node3.left = node1;
-        node3.right = node2;
-        node5.left = node6;
+        four.left = three;
+        four.right = five;
+        three.left = one;
+        three.right = two;
+        five.left = six;
 
-        final Node result = solution.findSuccessor(node4);
+        final Node result = solution.findSuccessor(four);
 
-        assertEquals(node6, result);
+        assertEquals(six, result);
     }
 }
