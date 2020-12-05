@@ -10,7 +10,7 @@ public class Solution_1Test {
     private final Solution_1 solution = new Solution_1();
 
     @Test
-    public void findFirstCommonAncestor_1() throws Exception {
+    public void findFirstCommonAncestor_1() {
         final Node node1 = new Node(1);
         final Node node2 = new Node(2);
         final Node node3 = new Node(3);
@@ -58,12 +58,11 @@ public class Solution_1Test {
         node1.left = node2;
 
         final Node result = solution.findFirstCommonAncestor(node8, node8);
-
         assertEquals(node8, result);
     }
 
     @Test
-    public void findFirstCommonAncestor_2() throws Exception {
+    public void findFirstCommonAncestor_2() {
         final Node node1 = new Node(1);
         final Node node2 = new Node(2);
         final Node node3 = new Node(3);
@@ -111,12 +110,11 @@ public class Solution_1Test {
         node1.left = node2;
 
         final Node result = solution.findFirstCommonAncestor(node8, node12);
-
         assertEquals(node1, result);
     }
 
     @Test
-    public void findFirstCommonAncestor_3() throws Exception {
+    public void findFirstCommonAncestor_3() {
         final Node node1 = new Node(1);
         final Node node2 = new Node(2);
         final Node node3 = new Node(3);
@@ -164,12 +162,11 @@ public class Solution_1Test {
         node1.left = node2;
 
         final Node result = solution.findFirstCommonAncestor(node8, node5);
-
         assertEquals(node2, result);
     }
 
     @Test
-    public void findFirstCommonAncestor_4() throws Exception {
+    public void findFirstCommonAncestor_4() {
         final Node node1 = new Node(1);
         final Node node2 = new Node(2);
         final Node node3 = new Node(3);
@@ -217,7 +214,6 @@ public class Solution_1Test {
         node1.left = node2;
 
         final Node result = solution.findFirstCommonAncestor(node8, node1);
-
         assertEquals(node1, result);
     }
 }
