@@ -6,12 +6,12 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
-public class SolutionTest {
+public class Solution_2Test {
 
-    private final Solution solution = new Solution();
+    private final Solution_2 solution = new Solution_2();
 
     @Test
-    public void mergeTwoLists_1() {
+    public void test_1() {
         final Node l1 = null;
         final Node l2 = null;
 
@@ -21,7 +21,7 @@ public class SolutionTest {
     }
 
     @Test
-    public void mergeTwoLists_2() {
+    public void test_2() {
         final Node l1 = new Node(1);
         final Node l2 = new Node(1);
         l2.next = new Node(2);
@@ -36,7 +36,7 @@ public class SolutionTest {
     }
 
     @Test
-    public void mergeTwoLists_3() {
+    public void test_3() {
         final Node l1 = new Node(1);
         l1.next = new Node(3);
         l1.next.next = new Node(4);
@@ -53,4 +53,5 @@ public class SolutionTest {
         assertEquals(3, result.next.next.next.next.data);
         assertEquals(4, result.next.next.next.next.next.data);
     }
+
 }
