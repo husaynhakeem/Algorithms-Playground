@@ -7,9 +7,9 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-public class SolutionTest {
+public class Solution_2Test {
 
-    private final Solution solution = new Solution();
+    private final Solution_2 solution = new Solution_2();
 
     @Test
     public void test_1() {
@@ -22,8 +22,8 @@ public class SolutionTest {
                 ListUtils.createList(1, 3, 2),
                 ListUtils.createList(2, 1, 3),
                 ListUtils.createList(2, 3, 1),
-                ListUtils.createList(3, 2, 1),
-                ListUtils.createList(3, 1, 2)
+                ListUtils.createList(3, 1, 2),
+                ListUtils.createList(3, 2, 1)
         );
         assertEquals(expectedResult, result);
     }
