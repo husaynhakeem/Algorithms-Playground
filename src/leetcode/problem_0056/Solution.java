@@ -1,63 +1,42 @@
 package leetcode.problem_0056;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Solution {
 
-    List<Interval> merge(final List<Interval> intervals) {
-        intervals.sort((interval1, interval2) -> {
-            if (interval1.start != interval2.start) {
-                return interval1.start - interval2.start;
-            }
-            return interval1.end - interval2.end;
+    public int[][] merge(int[][] intervals) {
+        if (intervals.length == 0) {
+            return new int[0][];
+        }
+
+        // Sort intervals from smallest to biggest
+        Arrays.sort(intervals, (i1, i2) -> {
+            return i1[0] - i2[0];
         });
 
-        final List<Interval> results = new ArrayList<>();
+        // Merge intervals
+        final List<int[]> merged = new ArrayList<>();
+        merged.add(intervals[0]);
 
-        for (final Interval interval : intervals) {
-            if (results.isEmpty()) {
-                results.add(interval);
-                continue;
-            }
-
-            final Interval previous = results.get(results.size() - 1);
-            if (canMerge(previous, interval) || canMerge(interval, previous)) {
-                previous.start = Math.min(previous.start, interval.start);
-                previous.end = Math.max(previous.end, interval.end);
+        for (int i = 1; i < intervals.length; i++) {
+            final int[] head = merged.get(merged.size() - 1);
+            final int[] current = intervals[i];
+            if (current[0] <= head[1]) {
+                // Merge
+                head[1] = Math.max(head[1], current[1]);
             } else {
-                results.add(interval);
+                merged.add(current);
             }
         }
 
-        return results;
-    }
-
-    private boolean canMerge(final Interval interval1, final Interval interval2) {
-        return interval2.start <= interval1.end && interval1.end <= interval2.end;
-    }
-
-    public static class Interval {
-        int start;
-        int end;
-
-        public Interval() {
-            start = 0;
-            end = 0;
+        // Convert List of merged intervals to int matrix
+        final int[][] mergedMatrix = new int[merged.size()][2];
+        int index = 0;
+        for (int[] interval: merged) {
+            mergedMatrix[index++] = interval;
         }
-
-        public Interval(int s, int e) {
-            start = s;
-            end = e;
-        }
-
-        @Override
-        public boolean equals(Object other) {
-            if (other instanceof Interval) {
-                final Interval otherInterval = (Interval) other;
-                return otherInterval.start == start && otherInterval.end == end;
-            }
-            return false;
-        }
+        return mergedMatrix;
     }
 }
